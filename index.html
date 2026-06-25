@@ -1,266 +1,599 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!--
+  AddOne (AAD1) — Designed Business Plan Presentation
+  Visual system: stained/leaded glass (Audrey's craft) + raku ceramic glaze (Alma's craft)
+  Heritage as a whisper, not a costume: motifs abstracted, palette drawn from real raku + jewel glass.
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AddOne (AAD1) — Sample Business Plan</title>
-<meta name="description" content="AddOne (AAD1) — a sample, illustrative business-plan presentation. Not legal or financial advice.">
+<title>AddOne — AAD1 · Plan</title>
+
 <style>
-  :root {
-    --bg: #0a0b10;
-    --bg-soft: #11131c;
-    --panel: #15182400;
-    --ink: #e8e6df;
-    --ink-soft: #b9b6ac;
-    --line: #232737;
-    --cobalt: #3b6ed6;
-    --teal: #2fae9b;
-    --copper: #c9783b;
-    --amber: #e0a83e;
-    --garnet: #b3445a;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background:
-      radial-gradient(1200px 600px at 12% -8%, rgba(59,110,214,0.14), transparent 60%),
-      radial-gradient(1000px 560px at 92% 4%, rgba(47,174,155,0.12), transparent 60%),
-      radial-gradient(900px 700px at 50% 120%, rgba(179,68,90,0.12), transparent 60%),
-      var(--bg);
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 17px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    word-wrap: break-word;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 20px 72px; }
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600&display=swap');
 
-  header.hero {
-    text-align: center;
-    padding: 40px 0 8px;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 8px;
-  }
-  .monogram {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    font-size: clamp(2.6rem, 12vw, 4.2rem);
-    line-height: 1;
-    margin: 0 0 6px;
-    background: linear-gradient(135deg, var(--cobalt), var(--teal) 38%, var(--amber) 66%, var(--garnet));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
-  }
-  .hero .brand { font-size: 0.92rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-soft); margin: 0; }
+:root{
+  --came:#14161a;          /* lead came / ink */
+  --ground:#0c1216;        /* kiln-dark hero ground */
+  --ground-2:#101a20;
+  --porcelain:#e7e3d9;     /* cool porcelain reading surface (not cream) */
+  --porcelain-2:#f0ede5;
+  --panel:#f3f0e9;
+  --cobalt:#1e3a8f;        /* Gingras glass blue */
+  --cobalt-lt:#3f63c9;
+  --verdigris:#1c8a7c;     /* raku oxidized teal — signature */
+  --verdigris-lt:#34b3a2;
+  --copper:#b3623c;        /* raku copper luster */
+  --copper-lt:#d68a5c;
+  --amber:#d6a13c;         /* amber glass / ochre */
+  --garnet:#a8434c;        /* Nye red, muted to glass garnet */
+  --ink:#1a1c20;
+  --muted:#6c6358;
+  --line:#cdc6b8;
+}
 
-  .notice {
-    margin: 22px 0 6px;
-    padding: 14px 16px;
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--amber);
-    border-radius: 8px;
-    background: rgba(224,168,62,0.06);
-    color: var(--ink-soft);
-    font-size: 0.92rem;
-  }
-  .notice strong { color: var(--amber); }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Inter",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--porcelain);
+  font-size:17px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:"Fraunces",Georgia,serif;font-optical-sizing:auto}
+a{color:var(--cobalt)}
+::selection{background:var(--amber);color:var(--came)}
 
-  h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 700;
-    font-size: clamp(1.8rem, 7vw, 2.6rem);
-    line-height: 1.15;
-    margin: 0.2em 0 0.3em;
-    color: #fff;
-  }
-  /* The document's leading H1 is shown in the hero; hide the in-body duplicate. */
-  .wrap > h1:first-of-type { display: none; }
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px}
 
-  h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 700;
-    font-size: clamp(1.4rem, 5.5vw, 1.9rem);
-    line-height: 1.2;
-    margin: 1.6em 0 0.5em;
-    padding-bottom: 0.28em;
-    border-bottom: 1px solid var(--line);
-    color: #f3f1ea;
-  }
-  h2::before {
-    content: "";
-    display: inline-block;
-    width: 0.62em; height: 0.62em;
-    margin-right: 0.5em;
-    border-radius: 2px;
-    transform: rotate(45deg);
-    vertical-align: middle;
-    background: var(--cobalt);
-  }
-  h2:nth-of-type(5n+1)::before { background: var(--cobalt); }
-  h2:nth-of-type(5n+2)::before { background: var(--teal); }
-  h2:nth-of-type(5n+3)::before { background: var(--copper); }
-  h2:nth-of-type(5n+4)::before { background: var(--amber); }
-  h2:nth-of-type(5n+5)::before { background: var(--garnet); }
+/* ---------- top came strip ---------- */
+.camestrip{height:10px;background:
+  repeating-linear-gradient(90deg,var(--cobalt) 0 11.11%,var(--garnet) 11.11% 22.22%,var(--verdigris) 22.22% 33.33%,var(--amber) 33.33% 44.44%,var(--copper) 44.44% 55.55%) ;
+  position:relative;}
+.camestrip::after{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,transparent 0 11.11%,var(--came) 11.11% calc(11.11% + 3px));
+  opacity:.85}
 
-  h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 700;
-    font-size: 1.18rem;
-    margin: 1.4em 0 0.4em;
-    color: var(--teal);
-  }
+/* ---------- HERO ---------- */
+.hero{
+  background:
+    radial-gradient(120% 90% at 50% 28%, #1a2c33 0%, var(--ground-2) 42%, var(--ground) 78%);
+  color:var(--porcelain);
+  padding:64px 28px 80px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero .glow{
+  position:absolute;left:50%;top:30%;width:740px;height:740px;transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(214,161,60,.30) 0%, rgba(28,138,124,.16) 38%, transparent 66%);
+  filter:blur(6px);pointer-events:none;
+  animation:kindle 2.4s ease-out both;
+}
+@keyframes kindle{from{opacity:0;transform:translate(-50%,-50%) scale(.9)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 
-  p { margin: 0.7em 0; color: var(--ink); }
-  strong { color: #fff; font-weight: 650; }
-  em { color: var(--ink-soft); }
+.window{width:min(360px,72vw);height:auto;display:block;margin:0 auto 30px;
+  filter:drop-shadow(0 24px 60px rgba(0,0,0,.55));
+  animation:rise 1.5s cubic-bezier(.2,.8,.2,1) both;}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
-  a { color: var(--teal); }
+.kicker{font-size:.74rem;letter-spacing:.42em;text-transform:uppercase;color:var(--amber);
+  margin:0 0 14px;font-weight:500}
+.hero h1{font-size:clamp(3.4rem,11vw,6.2rem);line-height:.92;margin:.1em 0 .12em;font-weight:900;
+  letter-spacing:-.01em;color:var(--porcelain)}
+.hero .said{font-family:"Fraunces";font-style:italic;font-size:clamp(1.05rem,3.4vw,1.5rem);
+  color:var(--verdigris-lt);margin:.2em 0 1.1em;font-weight:400}
+.hero .lede{max-width:620px;margin:0 auto;color:#cdd5d2;font-size:1.02rem}
+.hero .founders{margin-top:26px;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:#9fb0ad}
+.hero .draft{margin-top:30px;display:inline-block;border:1px solid rgba(214,161,60,.4);
+  color:var(--amber);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:7px 16px;border-radius:2px}
 
-  ul, ol { margin: 0.7em 0; padding-left: 1.3em; }
-  li { margin: 0.5em 0; }
-  ul li::marker { color: var(--copper); }
-  ol li::marker { color: var(--cobalt); font-weight: 700; }
+/* ---------- contents (came nav) ---------- */
+.contents{background:var(--ground);border-top:1px solid rgba(255,255,255,.06);
+  padding:18px 28px;}
+.contents .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center}
+.contents a{color:#aebbb8;text-decoration:none;font-size:.78rem;letter-spacing:.04em;
+  display:inline-flex;align-items:center;gap:7px;padding:4px 2px}
+.contents a:hover{color:var(--amber)}
+.contents a .jewel{width:9px;height:9px;flex:0 0 9px;transform:rotate(45deg);
+  background:var(--verdigris);box-shadow:0 0 0 1.5px var(--came) inset}
 
-  blockquote {
-    margin: 1.1em 0;
-    padding: 2px 16px;
-    border-left: 3px solid var(--garnet);
-    background: rgba(179,68,90,0.07);
-    border-radius: 0 8px 8px 0;
-    color: var(--ink-soft);
-    font-style: italic;
-  }
+/* ---------- sections ---------- */
+section{padding:62px 0}
+section.alt{background:linear-gradient(var(--porcelain-2),var(--porcelain-2))}
+.eyebrow{display:flex;align-items:center;gap:11px;font-size:.74rem;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:600}
+.eyebrow .lozenge{width:16px;height:16px;flex:0 0 16px}
+h2{font-size:clamp(1.8rem,4.6vw,2.7rem);line-height:1.06;margin:0 0 .5em;font-weight:600;
+  letter-spacing:-.01em;color:var(--came)}
+h2 .no{font-family:"Inter";font-weight:600;font-size:.5em;color:var(--copper);
+  letter-spacing:.06em;vertical-align:.45em;margin-right:.5em}
+h3{font-size:1.16rem;margin:1.6em 0 .35em;color:var(--came);font-weight:600}
+p{margin:0 0 1.05em;max-width:74ch}
+strong{font-weight:600;color:var(--came)}
+em{font-style:italic}
+ul{margin:0 0 1.1em;padding-left:0;list-style:none;max-width:78ch}
+ul li{position:relative;padding-left:26px;margin:.5em 0}
+ul li::before{content:"";position:absolute;left:2px;top:.52em;width:10px;height:10px;
+  transform:rotate(45deg);background:var(--cobalt);box-shadow:0 0 0 1.5px var(--came) inset}
+ul li.v::before{background:var(--verdigris)}
+ul li.c::before{background:var(--copper)}
+ul li.g::before{background:var(--garnet)}
+ul li.a::before{background:var(--amber)}
 
-  hr.divider {
-    border: 0;
-    height: 1px;
-    margin: 2em 0;
-    background: linear-gradient(90deg, transparent, var(--line) 18%, var(--line) 82%, transparent);
-  }
+/* glass callout panel */
+.glasspanel{position:relative;background:var(--panel);border:1px solid var(--line);
+  border-left:5px solid var(--verdigris);padding:24px 26px;margin:1.4em 0;border-radius:3px;
+  box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 14px 30px -22px rgba(20,22,26,.5)}
+.glasspanel.cobalt{border-left-color:var(--cobalt)}
+.glasspanel.copper{border-left-color:var(--copper)}
+.glasspanel.garnet{border-left-color:var(--garnet)}
+.glasspanel p:last-child{margin-bottom:0}
+.glasspanel .tag{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin-bottom:.4em;display:block}
 
-  footer.foot {
-    margin-top: 40px;
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
-    color: var(--ink-soft);
-    font-size: 0.85rem;
-    text-align: center;
-  }
+.thesis{font-family:"Fraunces";font-size:clamp(1.3rem,3.6vw,1.9rem);line-height:1.35;
+  font-weight:400;color:var(--came);font-style:italic;max-width:24ch;margin:.2em 0 0}
 
-  @media (max-width: 420px) {
-    body { font-size: 16px; }
-    .wrap { padding: 20px 16px 56px; }
-  }
+/* two-column person/advisor panels (leaded) */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:1.2em 0}
+.leaded{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:22px 22px;
+  position:relative;overflow:hidden}
+.leaded::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;
+  background:linear-gradient(var(--cobalt),var(--verdigris))}
+.leaded.b2::before{background:linear-gradient(var(--copper),var(--amber))}
+.leaded h4{font-family:"Fraunces";font-size:1.18rem;margin:0 0 .1em;color:var(--came);font-weight:600}
+.leaded .role{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);
+  font-weight:600;margin-bottom:.7em}
+.leaded p{font-size:.92rem;margin:0;max-width:none;color:#3a3a3a}
+.leaded.star{border-color:var(--verdigris);box-shadow:0 0 0 1px var(--verdigris)}
+.leaded.star .role{color:var(--verdigris)}
+
+/* ceramic glaze phase tiles */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:1.4em 0}
+.tile{position:relative;border-radius:6px;padding:26px 22px 24px;color:#f4efe6;overflow:hidden;
+  min-height:200px;box-shadow:0 18px 34px -24px rgba(20,22,26,.7)}
+.tile .num{font-family:"Fraunces";font-size:2.6rem;font-weight:900;line-height:1;opacity:.92}
+.tile .ph{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin:.4em 0 .7em}
+.tile h4{font-family:"Fraunces";font-size:1.18rem;margin:0 0 .4em;font-weight:600}
+.tile p{font-size:.86rem;margin:0;max-width:none;color:rgba(255,255,255,.9)}
+.tile.t1{background:radial-gradient(120% 120% at 20% 0%,#2bb39f,#10675c 70%)}
+.tile.t2{background:radial-gradient(120% 120% at 20% 0%,#3f63c9,#172b66 72%)}
+.tile.t3{background:radial-gradient(120% 120% at 20% 0%,#d68a5c,#8a3f1f 72%)}
+.tile .crackle{position:absolute;inset:0;opacity:.22;mix-blend-mode:overlay;pointer-events:none}
+
+/* glaze swatches (raku palette) */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin:1.3em 0}
+.sw{border-radius:5px;height:96px;position:relative;overflow:hidden;display:flex;align-items:flex-end;
+  box-shadow:0 10px 22px -16px rgba(20,22,26,.7), 0 0 0 1px rgba(20,22,26,.12) inset}
+.sw span{position:relative;z-index:2;font-size:.68rem;letter-spacing:.08em;color:#fff;
+  padding:8px 10px;text-shadow:0 1px 3px rgba(0,0,0,.5);font-weight:500}
+.sw .crackle{position:absolute;inset:0;opacity:.28;mix-blend-mode:overlay}
+
+/* financial cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:1.3em 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px;
+  border-top:4px solid var(--cobalt)}
+.card.v{border-top-color:var(--verdigris)} .card.c{border-top-color:var(--copper)}
+.card .lab{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.card .big{font-family:"Fraunces";font-size:1.5rem;color:var(--came);font-weight:600;margin:.25em 0}
+.card p{font-size:.85rem;margin:0;color:#444}
+
+/* roadmap timeline */
+.road{margin:1.4em 0 0;padding-left:8px}
+.road li{position:relative;padding:0 0 22px 34px;list-style:none;max-width:80ch}
+.road li::before{content:"";position:absolute;left:6px;top:4px;width:13px;height:13px;transform:rotate(45deg);
+  background:var(--amber);box-shadow:0 0 0 2px var(--came) inset;z-index:2}
+.road li::after{content:"";position:absolute;left:11.5px;top:14px;bottom:-4px;width:2px;background:var(--line)}
+.road li:last-child::after{display:none}
+.road .when{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);font-weight:600}
+.road .what{display:block;font-size:.95rem;color:#333}
+
+/* glaze-drip divider */
+.divider{display:block;width:100%;height:34px}
+
+/* footer */
+footer{background:var(--ground);color:#9fb0ad;text-align:center;padding:54px 28px}
+footer .mark{font-family:"Fraunces";font-size:1.5rem;color:var(--porcelain);font-weight:600;letter-spacing:.02em}
+footer .said{font-style:italic;color:var(--verdigris-lt);margin:.3em 0 1.2em;font-family:"Fraunces"}
+footer p{max-width:62ch;margin:0 auto;font-size:.82rem;color:#7f8e8c}
+
+a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+@media(max-width:720px){
+  body{font-size:16px}
+  .grid2,.phases{grid-template-columns:1fr}
+  section{padding:48px 0}
+}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .window,.hero .glow{animation:none}
+  html{scroll-behavior:auto}
+}
 </style>
-</head>
-<body>
+
+<!-- shared SVG defs: crackle texture filter + glass gradients -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="crackle"><feTurbulence type="turbulence" baseFrequency="0.9 0.06" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 1.1"/></filter>
+    <filter id="glaze"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="3" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6"/></filter>
+  </defs>
+</svg>
+
+<div class="camestrip" aria-hidden="true"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- Signature: leaded stained-glass window fusing both family motifs + the AAD1 mark -->
+  <svg class="window" viewBox="0 0 480 800" role="img" aria-label="Stained-glass window with the AAD1 monogram, flanked by fleur-de-lis and stripe motifs">
+    <defs>
+      <radialGradient id="gCobalt" cx="50%" cy="38%" r="75%">
+        <stop offset="0%" stop-color="#4f74d6"/><stop offset="60%" stop-color="#22409a"/><stop offset="100%" stop-color="#152a66"/>
+      </radialGradient>
+      <radialGradient id="gVerd" cx="50%" cy="42%" r="72%">
+        <stop offset="0%" stop-color="#46c6b2"/><stop offset="60%" stop-color="#1c8f7e"/><stop offset="100%" stop-color="#0f5d52"/>
+      </radialGradient>
+      <radialGradient id="gAmber" cx="50%" cy="35%" r="80%">
+        <stop offset="0%" stop-color="#f4d27a"/><stop offset="60%" stop-color="#d6a13c"/><stop offset="100%" stop-color="#a9711f"/>
+      </radialGradient>
+      <radialGradient id="gCopper" cx="50%" cy="35%" r="80%">
+        <stop offset="0%" stop-color="#e09a6c"/><stop offset="60%" stop-color="#b3623c"/><stop offset="100%" stop-color="#7e3c1d"/>
+      </radialGradient>
+      <linearGradient id="gGarnet" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#c25a62"/><stop offset="100%" stop-color="#8a323b"/>
+      </linearGradient>
+      <radialGradient id="gSilver" cx="50%" cy="40%" r="75%">
+        <stop offset="0%" stop-color="#eef1f4"/><stop offset="100%" stop-color="#b9c2cc"/>
+      </radialGradient>
+    </defs>
+
+    <!-- window glass base + outer came frame (round-arched) -->
+    <path id="winshape" d="M70 760 V300 a170 170 0 0 1 340 0 V760 Z" fill="#0f1d22"/>
+    <!-- ARCH: sunburst rays behind roundel -->
+    <g stroke="#101a20" stroke-width="5">
+      <path d="M240 235 L240 110" /><path d="M240 235 L142 150"/><path d="M240 235 L338 150"/>
+      <path d="M240 235 L96 232"/><path d="M240 235 L384 232"/><path d="M240 235 L150 305"/><path d="M240 235 L330 305"/>
+    </g>
+    <!-- arch wedge glass -->
+    <path d="M240 235 L240 130 a160 160 0 0 1 95 38 Z" fill="url(#gAmber)"/>
+    <path d="M240 235 L335 168 a160 160 0 0 1 49 64 Z" fill="url(#gCobalt)"/>
+    <path d="M240 235 L240 130 a160 160 0 0 0 -95 38 Z" fill="url(#gCopper)"/>
+    <path d="M240 235 L145 168 a160 160 0 0 0 -49 64 Z" fill="url(#gVerd)"/>
+
+    <!-- central roundel (AAD1) -->
+    <circle cx="240" cy="235" r="74" fill="url(#gVerd)" stroke="#101a20" stroke-width="6"/>
+    <circle cx="240" cy="235" r="74" fill="none" stroke="#b3623c" stroke-width="3" opacity=".8"/>
+    <text x="240" y="252" text-anchor="middle" font-family="Fraunces,serif" font-weight="900"
+      font-size="46" fill="#f4efe6" letter-spacing="1">AAD1</text>
+
+    <!-- body: springline came -->
+    <line x1="70" y1="300" x2="410" y2="300" stroke="#101a20" stroke-width="6"/>
+    <!-- two flanking panels (Gingras fleur-de-lis on cobalt) -->
+    <rect x="70" y="300" width="170" height="210" fill="url(#gCobalt)"/>
+    <rect x="240" y="300" width="170" height="210" fill="url(#gCobalt)"/>
+    <line x1="240" y1="300" x2="240" y2="510" stroke="#101a20" stroke-width="6"/>
+    <!-- fleur-de-lis (silver glass), abstracted -->
+    <g fill="url(#gSilver)" stroke="#101a20" stroke-width="2.4">
+      <g transform="translate(155,405) scale(.92)">
+        <path d="M0,-58 C 9,-36 9,-20 0,-8 C -9,-20 -9,-36 0,-58 Z"/>
+        <path d="M0,-14 C -16,-30 -34,-26 -30,-6 C -26,8 -8,2 0,-14 Z"/>
+        <path d="M0,-14 C 16,-30 34,-26 30,-6 C 26,8 8,2 0,-14 Z"/>
+        <rect x="-15" y="2" width="30" height="8" rx="2"/>
+        <path d="M0,10 C 6,22 6,30 0,40 C -6,30 -6,22 0,10 Z"/>
+      </g>
+      <g transform="translate(325,405) scale(.92)">
+        <path d="M0,-58 C 9,-36 9,-20 0,-8 C -9,-20 -9,-36 0,-58 Z"/>
+        <path d="M0,-14 C -16,-30 -34,-26 -30,-6 C -26,8 -8,2 0,-14 Z"/>
+        <path d="M0,-14 C 16,-30 34,-26 30,-6 C 26,8 8,2 0,-14 Z"/>
+        <rect x="-15" y="2" width="30" height="8" rx="2"/>
+        <path d="M0,10 C 6,22 6,30 0,40 C -6,30 -6,22 0,40 Z"/>
+      </g>
+    </g>
+
+    <!-- Nye stripe band -->
+    <line x1="70" y1="510" x2="410" y2="510" stroke="#101a20" stroke-width="6"/>
+    <g>
+      <rect x="70" y="510" width="340" height="22" fill="url(#gGarnet)"/>
+      <rect x="70" y="532" width="340" height="22" fill="url(#gSilver)"/>
+      <rect x="70" y="554" width="340" height="22" fill="#2a2e34"/>
+      <rect x="70" y="576" width="340" height="22" fill="url(#gSilver)"/>
+      <rect x="70" y="598" width="340" height="22" fill="url(#gGarnet)"/>
+    </g>
+
+    <!-- base panel: AddOne wordmark on clay/amber -->
+    <line x1="70" y1="620" x2="410" y2="620" stroke="#101a20" stroke-width="6"/>
+    <rect x="70" y="620" width="340" height="140" fill="url(#gAmber)"/>
+    <text x="240" y="710" text-anchor="middle" font-family="Fraunces,serif" font-style="italic"
+      font-weight="600" font-size="44" fill="#3a230d">AddOne</text>
+
+    <!-- outer frame stroke on top -->
+    <path d="M70 760 V300 a170 170 0 0 1 340 0 V760 Z" fill="none" stroke="#101a20" stroke-width="9"/>
+    <line x1="70" y1="760" x2="410" y2="760" stroke="#101a20" stroke-width="9"/>
+  </svg>
+
+  <p class="kicker">Sample working draft · 2026</p>
+  <h1>AAD1</h1>
+  <p class="said">— pronounced “AddOne” · Alma · Audrey · Division 1 —</p>
+  <p class="lede">An active-lifestyle and accessories house founded by two NCAA Division I athletes and makers — built on stained glass, raku, and a life lived between the water and the mountains.</p>
+  <p class="founders">Alma Nye &nbsp;·&nbsp; Audrey Gingras</p>
+  <p class="draft">Illustrative · not legal or financial advice</p>
+</header>
+
+<!-- contents -->
+<nav class="contents" aria-label="Contents">
   <div class="wrap">
-    <header class="hero">
-      <p class="monogram">AAD1</p>
-      <p class="brand">AddOne &middot; Sample Business Plan</p>
-    </header>
-    <div class="notice">
-      <strong>Sample &amp; illustrative.</strong> This is a working draft for discussion.
-      Figures are placeholders, not projections. This is <strong>not legal or financial advice</strong> &mdash;
-      consult a startup attorney, a trademark attorney, and an accountant before forming an entity or committing capital.
-    </div>
-<h1>AddOne (AAD1) — Sample Business Plan</h1>
-<p><em>An active-lifestyle and accessories house founded by two NCAA Division I athletes and makers, Alma Nye and Audrey Gingras.</em></p>
-<hr class="divider">
-<h3>How to read this document</h3>
-<p>This is a <strong>sample / working draft</strong>, built from what's known about Alma and Audrey's interests, skills, and history. It is meant to be marked up, argued with, and filled in — not adopted as-is. Two things are deliberate:</p>
-<ol><li><strong>The financials are illustrative placeholders, not projections.</strong> They show the <em>shape</em> of the economics so the founders can replace them with real numbers. This document is not financial or legal advice; entity formation, trademark, and capital decisions should involve a startup attorney and an accountant.</li><li><strong>The eight product categories are sequenced, not simultaneous.</strong> A two-person company cannot responsibly launch swimwear, jewelry, travel bags, purses, wallets, sweaters, knit hats, and flip flops at once — each has different manufacturing, suppliers, margins, and inventory risk. The plan treats all eight as the brand's <em>product universe</em> and stages them across three phases. This sequencing is the single most important strategic choice in the plan.</li></ol>
-<hr class="divider">
-<h2>1. Executive summary</h2>
-<p>AddOne (stylized <strong>AAD1</strong>, pronounced "AddOne," from <strong>A</strong>lma <strong>A</strong>udrey <strong>D</strong>ivision <strong>1</strong>) is a direct-to-consumer active-lifestyle brand for design-literate women who move between water, mountains, and travel. The brand is founded by two former Division I athletes who are also working makers — Audrey in glass, ceramics, and design, Alma in ceramics and raku — and who have already collaborated on two product lines (jewelry and ceramics).</p>
-<p>The product universe spans the founders' own active life: <strong>swimwear and flip flops</strong> (water), <strong>sweaters and knit hats</strong> (mountain/cold), <strong>travel bags, purses, and wallets</strong> (carry/travel), and <strong>jewelry</strong> (adornment). The unifying idea is a single wardrobe-and-accessories brand for one customer's whole active life, carried by an authentic two-founder story and a craft sensibility.</p>
-<p>The company launches lean with the founders' proven, low-capital, high-margin categories, establishes brand and cash flow, then extends into the more capital-intensive hero and lifestyle categories as audience and capital allow. The defensible edge is not any single product — it is the combination of athletic credibility, genuine making ability, apparel commercial experience, and a brand story competitors cannot copy.</p>
-<hr class="divider">
-<h2>2. Company and vision</h2>
-<p><strong>Mission.</strong> To make beautifully crafted, performance-minded gear and adornment for women who live actively — in the water, on the trail, and on the move.</p>
-<p><strong>Brand thesis.</strong> Most active-women's brands are either technical (performance, no soul) or pretty (design, no credibility). AddOne sits in the rare middle: made by athletes who are also artists. Every category answers one question — <em>what does this customer wear, carry, and adorn herself with across an active, outdoor, travel-rich life?</em></p>
-<p><strong>The unifying thread across all eight categories</strong> is lifestyle, not material. It is the same woman from dawn swim to summit to airport: she needs a suit, sandals, a layer, a hat, a bag, a wallet, and something to wear that means something. That coherence is what lets one brand credibly span categories that would otherwise look scattered.</p>
-<p><strong>Legal status.</strong> To be formed (see §11). Entity type, home state (California vs. Oregon), and ownership structure are open decisions requiring counsel.</p>
-<hr class="divider">
-<h2>3. Founders and team</h2>
-<p><strong>Audrey Gingras — Co-founder.</strong> Visual artist (USD, 2025; Juror's Prize; artist residency) with hands-on command of glass, ceramics, and fabrication, and a former D1 swimmer. Has worked in business development at Lands' End Outfitters, giving her direct apparel-industry and commercial exposure. Based in West Palm Beach, Florida. Her swimming and the coastal Florida base are lived product insight for the water/swimwear categories.</p>
-<p><strong>Alma Nye — Co-founder.</strong> B.S. in Business Administration (University of Oregon), D1 lacrosse, current Latvian National Team player and lacrosse coach. Co-founded and operates a coffee business; premium-retail sales experience (On). Accomplished ceramicist with demonstrated raku skill. Certified diver; soloed Mt. Hood. Based in Joseph, Oregon. Her athletics, diving, and mountaineering <em>are</em> the brand's lifestyle, not decoration.</p>
-<p><strong>Roots.</strong> Both founders were born and raised in Portland, Oregon — a shared home base that connects them to a deep Pacific Northwest network of makers and family, several of whom form a natural advisory team (below).</p>
-<p><strong>Roles — shared and fungible, not fixed.</strong> Both founders are creatives; both can design and make. Rather than locking one into "creative" and the other into "business," the partnership shares creative direction and rotates or splits the operating responsibilities by strength and interest. What this requires in practice is not a rigid title split but a clear <strong>map of decision ownership</strong> — for any given decision (a product design, a price, a supplier choice, a spend), who has the final say? Fungible titles work only when decision rights are explicit; otherwise "we both do everything" becomes "no one owns anything." The recommended structure: shared creative leadership, with each founder designated the <strong>decision owner</strong> for specific operating domains (e.g., one owns finance/supply chain, the other owns brand/marketing/sales) so accountability is unambiguous even though creative work is joint. Revisit the split as the company grows.</p>
-<h3>Advisory team</h3>
-<p>A founding strength of AddOne is an unusually deep and <em>commercially relevant</em> bench of family advisors — a multi-generational creative lineage rooted in the founders' Portland home, anchored by the Nye family. This is a genuine, hard-to-replicate asset: not just mentorship and craft knowledge, but a directly analogous business case and decades of working-artist credibility.</p>
-<ul><li><strong>Danielle Easley Nye — Advisor (founder, dani Naturals).</strong> Alma's aunt; based in Bend, Oregon. Founder of <strong>dani Naturals</strong>, an all-natural bath, body, and home-care company she launched in Portland in 1996 — eco-friendly vegetable-based soaps and soy candles, a Redbook "Most Valuable Product" award, and a brand that grew into a recognized boutique presence in natural beauty and wellness. <em>This is the single most valuable advisor on the bench.</em> She has done the exact thing the founders are attempting: built a product brand from scratch in Oregon, navigated manufacturing, packaging, distribution, retail, and longevity (nearly 30 years), in an adjacent premium/natural-goods category. She should be treated as a primary mentor, not a peripheral advisor — and she is the one person who can speak to the unglamorous operational realities (sourcing, margins, inventory, wholesale) from lived experience.</li><li><strong>Whitney Nye — Advisor (artist).</strong> Alma's aunt; acclaimed contemporary mixed-media artist (BA, University of Oregon, 1989) working between studios in Portland and New York. Works held in public and private collections including the Jordan Schnitzer Museum of Art, OHSU, Vanderbilt and Swedish medical centers, and the U.S. Art in Embassies program; large-scale public commissions including Portland International Airport and the Nike World Campus. Brings serious aesthetic counsel, a sophisticated exhibition/collector network, and — via the Nike and PDX work — real experience operating as an artist at commercial and institutional scale.</li><li><strong>Juanita Nye — Advisor (artist).</strong> Alma's grandmother; Whitney's mother; Portland-based fine artist (studied under sculptor Mel Katz) and celebrated container gardener. The origin of the family's three-generation making tradition and its through-line of creative resourcefulness. Elder creative voice and the authentic root of the heritage-of-craft story.</li><li><strong>Audrey's advisors — to be added.</strong> Audrey may bring her own advisors aboard. This is worth doing deliberately. The current bench is exceptional but entirely from Alma's (the Nye) family — which is both a strength and a structural imbalance: advisors tied to one founder can, in a disagreement, read as that founder's bloc rather than the company's counsel. Balancing the bench protects the partnership. With dani Naturals already covering the "built a product brand" experience, Audrey's additions are best aimed at gaps the family network still doesn't fill — apparel/swimwear manufacturing specifically, DTC growth/performance marketing, and an independent advisor unaffiliated with either family.</li></ul>
-<p><strong>How to use the advisory team well (recommended).</strong> Keep advisor relationships clear and lightweight: define what each advisor is asked for (Danielle = end-to-end product-business operations; Whitney = art-world brand/aesthetic/network; Juanita = creative heritage and counsel), set a simple cadence (e.g., quarterly check-ins, or ad hoc by domain), and decide early whether any role carries equity or compensation — even close family advisors are best handled with a short, explicit understanding so expectations never blur. Advice is input, not authority; the founders remain the decision-makers per the ownership map above.</p>
-<p><strong>Near-term external needs (beyond the advisory bench).</strong></p>
-<ul><li>Technical swimwear/apparel designer or pattern maker (swimwear and knitwear require skills neither founder nor the current advisors have).</li><li>Manufacturing partners per category (swimwear, leather goods, footwear, knitwear).</li><li>Bookkeeper/accountant and a startup + trademark attorney.</li></ul>
-<hr class="divider">
-<h2>4. Market and customer</h2>
-<p><strong>Target customer.</strong> Active, outdoorsy, design-conscious women, roughly 25–45, who swim/hike/travel, have discretionary income, and prefer fewer, better, meaningful things over fast fashion. She is, essentially, an older version of the founders and their peers — which is a strength: they can design for someone they understand.</p>
-<p><strong>Positioning.</strong> Premium but not untouchable; performance-credible; craft-led; story-rich. Between mass athletic brands (scale, no soul) and pure fashion (no athletic credibility).</p>
-<p><strong>Why now.</strong> Sustained consumer pull toward founder-led, authentic, small-batch brands with a real story; growth in women's performance and outdoor categories; DTC tools that let two people reach a national audience without retail.</p>
-<p><strong>Competitive reality (honest).</strong> Every one of these eight categories is crowded and many are dominated by well-capitalized incumbents. AddOne does not win on product specs or price. It wins on <em>brand, story, and taste</em> — which is exactly why brand and sequencing matter more than breadth.</p>
-<hr class="divider">
-<h2>5. Products — the universe and the rollout</h2>
-<p>The eight categories are grouped by what they demand operationally, then staged so the brand learns and earns before taking on capital-intensive products.</p>
-<h3>Phase 1 — Anchor (Months 0–12): prove the brand, generate cash, low capital</h3>
-<p>Categories the founders can make or source at low minimums, with high margins and fast time-to-market.</p>
-<ul><li><strong>Jewelry</strong> — already made and sold by the founders together; founder-made or small-batch; high margin; lowest risk; establishes the aesthetic.</li><li><strong>Knit hats</strong> (beanies/headwear) — low minimum-order quantities, simple supply chain, strong brand-logo vehicle, on-brand for outdoor/cold.</li><li><em>(Optional)</em> <strong>Wallets / small leather goods</strong> — small, high-margin carry items that introduce the leather category cheaply.</li></ul>
-<p>Purpose of Phase 1: validate demand, build the email list and social audience, generate revenue, and establish brand identity — <strong>before</strong> spending on technical product.</p>
-<h3>Phase 2 — Hero (Months 12–24): the brand-defining product</h3>
-<ul><li><strong>Swimwear</strong> — the boldest expression of the brand's water/athletic story and Audrey's lived insight. Deliberately <em>not</em> first, because it requires a technical designer, performance textiles, fit/grading, and meaningful inventory capital. Launched once brand, audience, and cash exist to support it. This is the product the brand is <em>about</em>; it just isn't the product the brand <em>starts</em> with.</li><li><strong>Flip flops / sandals</strong> — natural water-lifestyle companion to swimwear; can launch alongside or just after, via a footwear manufacturer.</li></ul>
-<h3>Phase 3 — Lifestyle expansion (Months 24–36+): round out the wardrobe</h3>
-<p>Leveraging established brand, audience, and supplier relationships.</p>
-<ul><li><strong>Travel bags</strong> and <strong>purses</strong> — leather/textile carry; higher complexity and capital.</li><li><strong>Sweaters</strong> — knitwear; seasonal; requires knit manufacturing partner.</li></ul>
-<h3>The make-by-hand vs. manufacture split (decisive)</h3>
-<ul><li><strong>Founder-made / small-batch:</strong> jewelry, possibly ceramics-adjacent pieces. Unique, high-margin, scarcity built in, but hard to scale.</li><li><strong>Manufactured by partners:</strong> swimwear, flip flops, bags, purses, wallets, sweaters, knit hats. Scalable, but capital-intensive and dependent on sourcing relationships and minimum orders.</li></ul>
-<p>This split is not a detail — it determines capital needs, margins, and how much of the brand the founders physically touch. It should be decided explicitly per category.</p>
-<hr class="divider">
-<h2>6. Brand and identity</h2>
-<ul><li><strong>Name system:</strong> <em>AddOne</em> (spoken and written brand) / <strong>AAD1</strong> (compressed monogram/mark, à la LV or the prancing horse) / <em>AlmaAudreyDivision1</em> (the meaning/origin story). Lead with "AddOne" in all customer-facing use; deploy AAD1 as the visual mark.</li><li><strong>Story:</strong> two Division I athletes and makers building gear for a life like theirs — and, beneath that, a documented Portland-rooted creative lineage: three generations of Nye women working as artists and makers, including a successful natural-goods brand founder (dani Naturals, est. 1996) in the family. Authentic, ownable, and the brand's primary moat. The heritage-of-craft thread is real and verifiable, not invented, and can be drawn on honestly — including a credible "next generation of a making family" narrative.</li><li><strong>Visual direction:</strong> craft sensibility (hand-made feel, tactile detail) meets clean athletic modernity. Optional heritage <em>texture</em> — palette and a single abstracted motif drawn from the founders' family-name heraldry (Gingras blue/silver fleur-de-lis; Nye red/silver stripes) — used as inspiration only, abstracted and original, never as literal crests.</li><li><strong>Critical pre-launch legal step:</strong> trademark clearance on <em>AddOne</em>, <em>AAD1</em>, and <em>AlmaAudreyDivision1</em>, including assessment of NCAA sensitivity around "Division 1," and securing both spellings across domains and social handles (the AddOne/AAD1 spelling-to-sound gap must be managed deliberately). Do this before any public branding spend.</li></ul>
-<hr class="divider">
-<h2>7. Business model and pricing</h2>
-<ul><li><strong>Channel:</strong> direct-to-consumer first (own the margin and the customer relationship), via Shopify + an Instagram-led content engine. Selective wholesale to aligned retailers only after the brand is established.</li><li><strong>Inventory strategy:</strong> made-to-order and limited drops early to minimize inventory risk; deliberate small-batch scarcity (the Ferrari principle — slightly under-supply demand to protect desirability and pricing power). This converts the founders' biggest constraint (can't mass-produce) into the actual strategy.</li><li><strong>Pricing posture:</strong> premium and disciplined. <strong>Never train customers to wait for discounts</strong> (the LVMH principle). Protect price; build perceived value through craft, story, and scarcity.</li><li><strong>Revenue streams:</strong> product sales (primary); limited collaborations/capsules; potential made-to-order/bespoke jewelry; later, wholesale.</li></ul>
-<hr class="divider">
-<h2>8. Operations and supply chain</h2>
-<ul><li><strong>Design hubs:</strong> West Palm Beach, Florida (Audrey) and Joseph, Oregon (Alma) — a coast-and-mountain footprint that literally embodies the brand's water-to-trail range, but also a real operating spread (opposite corners of the country, a 3-hour time difference, and Joseph being rural/remote). Decide explicitly how design, inventory, fulfillment, and decision-making are split across the two. Centralize fulfillment in one hub or use a third-party logistics (3PL) provider early; do not try to run inventory out of two homes 2,500 miles apart.</li><li><strong>Geography as brand asset:</strong> the split is worth leaning into — Audrey on the Atlantic coast (swimwear, water, warm-weather lifestyle) and Alma in the Wallowa mountains (knitwear, outdoor, cold-weather, craft). Each founder can authentically anchor and shoot the categories native to her environment. The brand's two-climate story is real, not manufactured.</li><li><strong>Sourcing:</strong> build vetted manufacturer relationships per category, starting with the lowest-MOQ partners (knitwear, jewelry components) and adding swimwear and leather as phases open. Audrey's Lands' End apparel-sourcing exposure is a real asset here.</li><li><strong>Quality:</strong> define the standard early. Note the tension between craft irregularity (beautiful, but variable) and premium consistency (demands repeatability). Resolve per product line.</li><li><strong>Systems:</strong> clean books from day one, separate business banking, documented capital contributions, inventory and order-management software, business insurance and licenses.</li></ul>
-<hr class="divider">
-<h2>9. Go-to-market</h2>
-<ul><li><strong>Pre-launch:</strong> build audience before product — founders' story, behind-the-scenes making, the athlete-maker narrative; collect emails; seed an engaged community.</li><li><strong>Launch:</strong> Phase 1 anchor products via limited first drop; founder-led storytelling; press/influencer outreach to aligned outdoor/active and craft communities.</li><li><strong>Growth engine:</strong> consistent content, drops that create anticipation, customer community, and selective collaborations. Word-of-mouth is the primary growth lever for a small premium brand — which makes the sayable "AddOne" name and a strong story essential.</li></ul>
-<hr class="divider">
-<h2>10. Financial framework <em>(illustrative — replace with real figures)</em></h2>
-<blockquote><p>These numbers are placeholders to show structure and to be replaced with the founders' actual costs and capital. They are not projections or advice.</p></blockquote>
-<p><strong>Illustrative startup costs (Phase 1):</strong></p>
-<ul><li>Entity formation, trademark, legal: $3,000–8,000</li><li>Brand identity, website, photography: $5,000–15,000</li><li>Initial inventory / materials (jewelry + hats): $5,000–15,000</li><li>Software, packaging, insurance, misc.: $2,000–5,000</li><li><strong>Rough Phase 1 starting capital: ~$15,000–40,000</strong></li></ul>
-<p><strong>Illustrative unit economics — jewelry (founder-made):</strong></p>
-<ul><li>Sale price $120 · materials $25 · labor/overhead allocation $20 → contribution ~$75/unit. High margin; scales with founder time.</li></ul>
-<p><strong>Illustrative unit economics — swimwear (manufactured, Phase 2):</strong></p>
-<ul><li>Sale price $110 · landed cost $35 · returns/fulfillment allowance $15 → contribution ~$60/unit. Lower margin %, higher upfront inventory and development cost, larger minimum orders.</li></ul>
-<p><strong>Illustrative 3-year shape (not a forecast):</strong></p>
-<ul><li>Year 1 (anchor only): modest revenue, near break-even, goal = validate + build audience.</li><li>Year 2 (swimwear hero launch): step-up in revenue and in capital required; first real inventory risk.</li><li>Year 3 (lifestyle expansion): broader catalog, established brand, supplier leverage.</li></ul>
-<p><strong>Capital question to answer before launch:</strong> how much can each founder contribute or raise, how long can each go without income, and do their risk appetites match? Phase 1 is designed to be fundable from modest personal capital; Phases 2–3 likely require retained earnings or outside funding.</p>
-<hr class="divider">
-<h2>11. Milestones / roadmap</h2>
-<ul><li><strong>0–3 months:</strong> founder alignment + ownership terms; map decision ownership by domain; choose entity and home state (Florida / Oregon / Delaware question); trademark filing; brand identity; supplier outreach for anchor products.</li><li><strong>3–6 months:</strong> Phase 1 product development; website; pre-launch audience building.</li><li><strong>6–12 months:</strong> Phase 1 launch (jewelry + knit hats); first drops; learn unit economics; grow list.</li><li><strong>12–18 months:</strong> hire/partner for technical swimwear design; develop swimwear; secure manufacturer.</li><li><strong>18–24 months:</strong> swimwear (hero) + flip flops launch.</li><li><strong>24–36 months:</strong> lifestyle expansion (bags, purses, wallets, sweaters); evaluate selective wholesale.</li></ul>
-<hr class="divider">
-<h2>12. Risk analysis</h2>
-<ul><li><strong>Over-extension (the central risk).</strong> Eight categories is the diffusion trap. Mitigation: the phased rollout and a strict rule that no new category opens until the prior phase is stable.</li><li><strong>Capital intensity.</strong> Swimwear, leather goods, and footwear demand inventory and development cash. Mitigation: sequence them after cash-generating anchors.</li><li><strong>Technical capability gap.</strong> Founders' craft (ceramics/jewelry) doesn't transfer to swimwear/knitwear/footwear construction. Mitigation: hire/partner before launching those categories.</li><li><strong>Coast-to-mountain coordination.</strong> Opposite corners of the country (Florida and rural Oregon), a 3-hour time difference, and Joseph's remoteness raise the cost of logistics and decision-making. Mitigation: centralized fulfillment or a 3PL, scheduled decision rhythms, and a clear operating agreement on roles and logistics.</li><li><strong>Shared/fungible roles without accountability.</strong> "We both do everything" can become "no one owns anything." Mitigation: explicit decision-ownership map by domain even while creative work stays joint.</li><li><strong>Founder alignment.</strong> Friends in business fail on unspoken expectations. Mitigation: do the partnership/ownership work first (see the founders' questions); run a post-mortem on the prior jewelry collaboration.</li><li><strong>Luxury consistency vs. craft irregularity.</strong> Mitigation: define quality standards per line; decide where "controlled imperfection" is a feature vs. a flaw.</li><li><strong>Brand/IP.</strong> Trademark and the "Division 1"/NCAA question must be cleared before public spend.</li></ul>
-<hr class="divider">
-<h2>13. Key open decisions (resolve before building)</h2>
-<ol><li><strong>Make-by-hand or design-for-manufacture</strong> — per category. Governs capital, margins, and scale.</li><li><strong>Lifestyle livelihood or scalable, sellable brand</strong> — shapes entity, funding, and ambition.</li><li><strong>Which category is truly first</strong> — the plan recommends jewelry + knit hats; the founders decide.</li><li><strong>Equity split, vesting, and buy-sell terms</strong> — including name rights on a founder's departure (the brand is named for them both).</li><li><strong>Entity type and home state</strong> — now a live question, since the founders sit in two different states (Florida and Oregon). Where the entity registers, where it's taxed, and where each founder's activity creates nexus all need counsel. Many remote two-founder companies form in one founder's state or in Delaware and register to do business where needed.</li><li><strong>How much capital, and from where.</strong></li><li><strong>Advisory structure</strong> — who advises, in what role, whether any role carries equity or compensation, and how to balance a currently family-heavy bench with at least one independent commercial/industry advisor and advisors of Audrey's choosing.</li></ol>
-<hr class="divider">
-<h2>Appendix — brand identity notes</h2>
-<ul><li><strong>Naming:</strong> AddOne (spoken/written) · AAD1 (mark) · AlmaAudreyDivision1 (meaning).</li><li><strong>Palette/motif seeds (inspiration only, to be abstracted):</strong> Gingras — blue &amp; silver, fleur-de-lis; Nye — red, silver &amp; charcoal, horizontal stripe. Extract and modernize; do not reproduce the vendor crests or claim them as heritage arms.</li><li><strong>Tone:</strong> athlete-maker authenticity; craft warmth; modern restraint.</li></ul>
-<hr class="divider">
-<p><em>Prepared as a working draft for Alma Nye and Audrey Gingras. Figures are illustrative. Not legal or financial advice; consult a startup attorney, a trademark attorney, and an accountant before forming the entity or committing capital.</em></p>
-    <footer class="foot">
-      AddOne (AAD1) &mdash; sample, illustrative business-plan presentation. Not legal or financial advice.
-    </footer>
+    <a href="#summary"><span class="jewel"></span>Summary</a>
+    <a href="#vision"><span class="jewel"></span>Vision</a>
+    <a href="#team"><span class="jewel"></span>Founders &amp; Advisors</a>
+    <a href="#market"><span class="jewel"></span>Market</a>
+    <a href="#products"><span class="jewel"></span>Products</a>
+    <a href="#brand"><span class="jewel"></span>Brand</a>
+    <a href="#model"><span class="jewel"></span>Model</a>
+    <a href="#ops"><span class="jewel"></span>Operations</a>
+    <a href="#finance"><span class="jewel"></span>Financials</a>
+    <a href="#road"><span class="jewel"></span>Roadmap</a>
+    <a href="#risk"><span class="jewel"></span>Risks</a>
+    <a href="#decisions"><span class="jewel"></span>Decisions</a>
   </div>
-</body>
-</html>
+</nav>
+
+<main class="wrap">
+
+  <!-- how to read -->
+  <section class="reveal" id="readme" style="padding-bottom:0">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--verdigris)" stroke="var(--came)" stroke-width="1.6"/></svg>How to read this</p>
+    <div class="glasspanel cobalt">
+      <span class="tag">A working draft</span>
+      <p>Built from what's known about Alma and Audrey's interests, skills, and history — meant to be marked up, argued with, and filled in. Two things are deliberate: the <strong>financials are illustrative placeholders</strong>, not projections; and the <strong>eight product categories are sequenced, not simultaneous</strong>. A two-person company cannot responsibly launch swimwear, jewelry, bags, purses, wallets, sweaters, hats, and flip-flops at once — so the plan stages them across three phases. That sequencing is the most important strategic choice here.</p>
+    </div>
+  </section>
+
+  <!-- 1 summary -->
+  <section class="reveal" id="summary">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--cobalt)" stroke="var(--came)" stroke-width="1.6"/></svg>Executive summary</p>
+    <h2><span class="no">01</span>Two athletes. Two makers. One house.</h2>
+    <p>AddOne (stylized <strong>AAD1</strong>, pronounced “AddOne,” from <strong>A</strong>lma <strong>A</strong>udrey <strong>D</strong>ivision <strong>1</strong>) is a direct-to-consumer active-lifestyle brand for design-literate women who move between water, mountains, and travel. It is founded by two former Division I athletes who are also working makers — Audrey in glass, ceramics, and design; Alma in ceramics and raku — who have already collaborated on two product lines (jewelry and ceramics).</p>
+    <p>The product universe spans the founders' own active life: <strong>swimwear and flip-flops</strong> (water), <strong>sweaters and knit hats</strong> (mountain), <strong>travel bags, purses, and wallets</strong> (carry), and <strong>jewelry</strong> (adornment). The company launches lean with the founders' proven, low-capital, high-margin categories, establishes brand and cash flow, then extends into the capital-intensive hero and lifestyle categories. The defensible edge is not any single product — it's the combination of athletic credibility, genuine making ability, apparel commercial experience, and a story competitors cannot copy.</p>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1000 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q 60 4 120 18 T 240 18 T 360 16 T 480 20 T 600 14 T 720 20 T 840 16 T 960 20 T 1080 18 L1000 34 L0 34 Z" fill="var(--verdigris)" opacity=".16"/></svg>
+
+  <!-- 2 vision -->
+  <section class="reveal alt" id="vision" style="padding-left:0;padding-right:0">
+   <div class="wrap">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--verdigris)" stroke="var(--came)" stroke-width="1.6"/></svg>Company &amp; vision</p>
+    <h2><span class="no">02</span>The rare middle</h2>
+    <div class="grid2" style="grid-template-columns:1.4fr 1fr;align-items:center">
+      <div>
+        <p><strong>Mission.</strong> To make beautifully crafted, performance-minded gear and adornment for women who live actively — in the water, on the trail, and on the move.</p>
+        <p>Most active-women's brands are either technical (performance, no soul) or pretty (design, no credibility). AddOne sits in the rare middle: <strong>made by athletes who are also artists.</strong> The unifying thread across all eight categories is lifestyle, not material — the same woman from dawn swim to summit to airport.</p>
+      </div>
+      <p class="thesis">“Heritage as a whisper, not a costume.”</p>
+    </div>
+   </div>
+  </section>
+
+  <!-- 3 team -->
+  <section class="reveal" id="team">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--copper)" stroke="var(--came)" stroke-width="1.6"/></svg>Founders &amp; team</p>
+    <h2><span class="no">03</span>The people</h2>
+    <div class="grid2">
+      <div class="leaded">
+        <h4>Audrey Gingras</h4>
+        <p class="role">Co-founder · West Palm Beach, FL</p>
+        <p>Visual artist (USD '25; Juror's Prize; residency) with hands-on command of glass, ceramics, and fabrication; former D1 swimmer; apparel business-development experience at Lands' End. Her swimming and coastal Florida base are lived insight for the water categories.</p>
+      </div>
+      <div class="leaded b2">
+        <h4>Alma Nye</h4>
+        <p class="role">Co-founder · Joseph, OR</p>
+        <p>B.S. Business Administration (Oregon); D1 lacrosse and Latvian National Team; co-founded and runs a coffee business; premium-retail sales; accomplished raku ceramicist; certified diver; soloed Mt. Hood. Her athletics and mountaineering are the brand's lifestyle.</p>
+      </div>
+    </div>
+
+    <div class="glasspanel">
+      <span class="tag">Roles — shared &amp; fungible, not fixed</span>
+      <p>Both founders are creatives; both design and make. Rather than locking one into “creative” and the other into “business,” creative direction is shared and operating responsibilities split by strength. The one requirement: a clear <strong>map of decision ownership</strong> — for any decision, who has final say — so “we both do everything” never becomes “no one owns anything.”</p>
+    </div>
+
+    <h3>Advisory team — a multi-generational maker lineage</h3>
+    <div class="grid2" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="leaded star">
+        <h4>Danielle Easley Nye</h4>
+        <p class="role">Founder, dani Naturals · Bend</p>
+        <p>Built a natural bath/body/home brand from scratch in Oregon (est. 1996; Redbook award). The exact precedent for this venture — sourcing, manufacturing, retail, longevity. Treat as primary mentor.</p>
+      </div>
+      <div class="leaded">
+        <h4>Whitney Nye</h4>
+        <p class="role">Artist · Portland / NYC</p>
+        <p>Acclaimed mixed-media artist; works in major collections; public commissions for PDX Airport and Nike World Campus. Aesthetic counsel + commercial-scale art experience.</p>
+      </div>
+      <div class="leaded">
+        <h4>Juanita Nye</h4>
+        <p class="role">Artist · Portland</p>
+        <p>Fine artist (studied under Mel Katz) and celebrated gardener; the root of a three-generation making tradition the brand can authentically draw on.</p>
+      </div>
+    </div>
+    <div class="glasspanel garnet">
+      <span class="tag">Balance the bench</span>
+      <p>The bench is exceptional but entirely from Alma's (the Nye) family — a structural imbalance. Audrey should add her own advisors, aimed at gaps the family doesn't fill: <strong>apparel/swimwear manufacturing, DTC growth, and at least one advisor independent of both families.</strong> Advice is input, not authority.</p>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1000 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q 60 4 120 18 T 240 18 T 360 16 T 480 20 T 600 14 T 720 20 T 840 16 T 960 20 T 1080 18 L1000 34 L0 34 Z" fill="var(--cobalt)" opacity=".14"/></svg>
+
+  <!-- 4 market -->
+  <section class="reveal alt" style="padding-left:0;padding-right:0" id="market">
+   <div class="wrap">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--amber)" stroke="var(--came)" stroke-width="1.6"/></svg>Market &amp; customer</p>
+    <h2><span class="no">04</span>Who she is</h2>
+    <p>Active, outdoorsy, design-conscious women, ~25–45, who swim, hike, and travel, have discretionary income, and prefer fewer, better, meaningful things. Essentially an older version of the founders and their peers — a strength, because they can design for someone they understand.</p>
+    <p><strong>The honest part:</strong> every one of the eight categories is crowded and many are dominated by well-capitalized incumbents. AddOne does not win on specs or price. It wins on <strong>brand, story, and taste</strong> — which is exactly why brand and sequencing matter more than breadth.</p>
+   </div>
+  </section>
+
+  <!-- 5 products -->
+  <section class="reveal" id="products">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--verdigris)" stroke="var(--came)" stroke-width="1.6"/></svg>Products — the universe &amp; the rollout</p>
+    <h2><span class="no">05</span>One brand, fired in stages</h2>
+    <p>The eight categories are staged so the brand learns and earns before taking on capital-intensive product. Each tile below is a phase, not a product line to launch all at once.</p>
+    <div class="phases">
+      <div class="tile t1">
+        <svg class="crackle" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><rect width="200" height="200" filter="url(#crackle)"/></svg>
+        <div class="num">01</div><div class="ph">Months 0–12 · Anchor</div>
+        <h4>Prove it. Cheaply.</h4>
+        <p>Jewelry (already made &amp; sold together) + knit hats, optionally small leather goods. Low minimums, high margin, founder-made. Builds brand, audience, and cash before any technical product.</p>
+      </div>
+      <div class="tile t2">
+        <svg class="crackle" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><rect width="200" height="200" filter="url(#crackle)"/></svg>
+        <div class="num">02</div><div class="ph">Months 12–24 · Hero</div>
+        <h4>Swimwear.</h4>
+        <p>The brand-defining product and Audrey's lived insight — deliberately not first, because it needs a technical designer, performance textiles, and inventory capital. Flip-flops follow alongside.</p>
+      </div>
+      <div class="tile t3">
+        <svg class="crackle" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true"><rect width="200" height="200" filter="url(#crackle)"/></svg>
+        <div class="num">03</div><div class="ph">Months 24–36+ · Lifestyle</div>
+        <h4>Round out the wardrobe.</h4>
+        <p>Travel bags, purses, wallets, sweaters — leveraging the established brand, audience, and supplier relationships. Higher complexity and capital, taken on last.</p>
+      </div>
+    </div>
+    <div class="glasspanel copper">
+      <span class="tag">The decisive fork</span>
+      <p><strong>Make by hand, or design for manufacture?</strong> Founder-made (jewelry, ceramics-adjacent) is unique, high-margin, scarce, hard to scale. Manufactured (swimwear, footwear, bags, knitwear) is scalable but capital-intensive and supplier-dependent. Decide this per category — it governs capital, margins, and how much of the brand the founders physically touch.</p>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1000 34" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q 60 4 120 18 T 240 18 T 360 16 T 480 20 T 600 14 T 720 20 T 840 16 T 960 20 T 1080 18 L1000 34 L0 34 Z" fill="var(--copper)" opacity=".16"/></svg>
+
+  <!-- 6 brand -->
+  <section class="reveal alt" style="padding-left:0;padding-right:0" id="brand">
+   <div class="wrap">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--cobalt)" stroke="var(--came)" stroke-width="1.6"/></svg>Brand &amp; identity</p>
+    <h2><span class="no">06</span>Glass, glaze, and a name you can say</h2>
+    <p><strong>Name system:</strong> <em>AddOne</em> (spoken &amp; written) · <strong>AAD1</strong> (the mark, à la LV or the prancing horse) · <em>AlmaAudreyDivision1</em> (the meaning). Visual world: the founders' own craft — leaded/fused glass and raku ceramic glaze — abstracted into a modern system. The palette below is drawn from Alma's actual raku work and the two family crests (Gingras cobalt &amp; silver fleur-de-lis; Nye garnet stripes), used as inspiration, never as literal heraldry.</p>
+
+    <div class="swatches">
+      <div class="sw" style="background:radial-gradient(120% 120% at 30% 10%,#34b3a2,#0f5d52)"><svg class="crackle" viewBox="0 0 120 96" preserveAspectRatio="none"><rect width="120" height="96" filter="url(#crackle)"/></svg><span>Verdigris · raku copper-patina</span></div>
+      <div class="sw" style="background:radial-gradient(120% 120% at 30% 10%,#4f74d6,#152a66)"><svg class="crackle" viewBox="0 0 120 96" preserveAspectRatio="none"><rect width="120" height="96" filter="url(#crackle)"/></svg><span>Cobalt · Gingras glass</span></div>
+      <div class="sw" style="background:radial-gradient(120% 120% at 30% 10%,#e09a6c,#7e3c1d)"><svg class="crackle" viewBox="0 0 120 96" preserveAspectRatio="none"><rect width="120" height="96" filter="url(#crackle)"/></svg><span>Copper · raku luster</span></div>
+      <div class="sw" style="background:radial-gradient(120% 120% at 30% 10%,#f4d27a,#a9711f)"><svg class="crackle" viewBox="0 0 120 96" preserveAspectRatio="none"><rect width="120" height="96" filter="url(#crackle)"/></svg><span>Amber · ochre glass</span></div>
+      <div class="sw" style="background:radial-gradient(120% 120% at 30% 10%,#c25a62,#8a323b)"><svg class="crackle" viewBox="0 0 120 96" preserveAspectRatio="none"><rect width="120" height="96" filter="url(#crackle)"/></svg><span>Garnet · Nye stripe</span></div>
+      <div class="sw" style="background:radial-gradient(120% 120% at 30% 10%,#2a2e34,#14161a)"><svg class="crackle" viewBox="0 0 120 96" preserveAspectRatio="none"><rect width="120" height="96" filter="url(#crackle)"/></svg><span>Carbon · raku reduction / lead came</span></div>
+    </div>
+
+    <div class="glasspanel">
+      <span class="tag">Pre-launch, non-negotiable</span>
+      <p>Trademark clearance on <em>AddOne</em>, <em>AAD1</em>, and <em>AlmaAudreyDivision1</em> — including the NCAA sensitivity around “Division 1” — and securing both spellings across domains and handles (the AddOne/AAD1 sound-to-spelling gap must be managed). Do this before any public branding spend.</p>
+    </div>
+   </div>
+  </section>
+
+  <!-- 7 model -->
+  <section class="reveal" id="model">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--garnet)" stroke="var(--came)" stroke-width="1.6"/></svg>Business model &amp; pricing</p>
+    <h2><span class="no">07</span>Scarcity by design</h2>
+    <ul>
+      <li><strong>Channel:</strong> direct-to-consumer first (own the margin and the customer); selective wholesale only once established.</li>
+      <li class="v"><strong>Inventory:</strong> made-to-order and limited drops early; deliberate small-batch scarcity (the Ferrari principle) turns the founders' biggest constraint into the strategy.</li>
+      <li class="c"><strong>Pricing:</strong> premium and disciplined — never train customers to wait for discounts (the LVMH principle). Protect price; build value through craft, story, and scarcity.</li>
+      <li class="g"><strong>Revenue:</strong> product sales (primary); limited capsules/collaborations; made-to-order jewelry; later, wholesale.</li>
+    </ul>
+  </section>
+
+  <!-- 8 ops -->
+  <section class="reveal alt" style="padding-left:0;padding-right:0" id="ops">
+   <div class="wrap">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--verdigris)" stroke="var(--came)" stroke-width="1.6"/></svg>Operations &amp; supply chain</p>
+    <h2><span class="no">08</span>Coast to mountain</h2>
+    <p>West Palm Beach (Audrey) and Joseph, Oregon (Alma) is a coast-and-mountain footprint that literally embodies the water-to-trail range — and a real operating spread (opposite corners of the country, a 3-hour gap, rural Joseph). Lean into it as a brand asset: each founder authentically anchors the categories native to her climate. But <strong>do not run inventory out of two homes 2,500 miles apart</strong> — centralize fulfillment or use a 3PL early.</p>
+    <p>Build vetted manufacturer relationships per category, lowest-MOQ first (knitwear, jewelry components), adding swimwear and leather as phases open. Define quality standards per line, resolving the tension between craft irregularity (beautiful, variable) and premium consistency. Clean books, separate banking, documented contributions from day one.</p>
+   </div>
+  </section>
+
+  <!-- 9 finance -->
+  <section class="reveal" id="finance">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--amber)" stroke="var(--came)" stroke-width="1.6"/></svg>Financial framework</p>
+    <h2><span class="no">09</span>The shape of the economics</h2>
+    <p><em>Illustrative placeholders — replace with real figures. Not a forecast, and not financial advice.</em></p>
+    <div class="cards">
+      <div class="card v"><div class="lab">Phase 1 starting capital</div><div class="big">~$15k–40k</div><p>Entity, trademark, brand, site, and initial jewelry + hat inventory.</p></div>
+      <div class="card"><div class="lab">Jewelry · founder-made</div><div class="big">~$75 / unit</div><p>$120 price · ~$45 materials + overhead → high margin, scales with time.</p></div>
+      <div class="card c"><div class="lab">Swimwear · manufactured</div><div class="big">~$60 / unit</div><p>$110 price · ~$50 landed + returns → lower margin %, higher upfront cost.</p></div>
+    </div>
+    <p>Year 1 (anchor only): modest revenue, near break-even, goal = validate + build audience. Year 2 (swimwear hero): step-up in revenue <em>and</em> capital required. Year 3 (lifestyle expansion): broader catalog, supplier leverage. Phase 1 is fundable from modest personal capital; Phases 2–3 likely need retained earnings or outside funding.</p>
+  </section>
+
+  <!-- 10 roadmap -->
+  <section class="reveal alt" style="padding-left:0;padding-right:0" id="road">
+   <div class="wrap">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--copper)" stroke="var(--came)" stroke-width="1.6"/></svg>Milestones</p>
+    <h2><span class="no">10</span>The roadmap</h2>
+    <ul class="road">
+      <li><span class="when">0–3 months</span><span class="what">Founder alignment + ownership terms; map decision ownership; choose entity &amp; home state (FL / OR / Delaware); file trademarks; brand identity; supplier outreach for anchor products.</span></li>
+      <li><span class="when">3–6 months</span><span class="what">Phase 1 product development; website; pre-launch audience building.</span></li>
+      <li><span class="when">6–12 months</span><span class="what">Phase 1 launch (jewelry + knit hats); first drops; learn unit economics; grow list.</span></li>
+      <li><span class="when">12–18 months</span><span class="what">Hire/partner for technical swimwear design; develop swimwear; secure manufacturer.</span></li>
+      <li><span class="when">18–24 months</span><span class="what">Swimwear (hero) + flip-flops launch.</span></li>
+      <li><span class="when">24–36 months</span><span class="what">Lifestyle expansion (bags, purses, wallets, sweaters); evaluate selective wholesale.</span></li>
+    </ul>
+   </div>
+  </section>
+
+  <!-- 11 risk -->
+  <section class="reveal" id="risk">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--garnet)" stroke="var(--came)" stroke-width="1.6"/></svg>Risk analysis</p>
+    <h2><span class="no">11</span>Where it breaks</h2>
+    <ul>
+      <li class="g"><strong>Over-extension (the central risk).</strong> Eight categories is the diffusion trap. Mitigation: the phased rollout, and no new category until the prior phase is stable.</li>
+      <li class="c"><strong>Capital intensity.</strong> Swimwear, leather, footwear need cash. Mitigation: sequence after cash-generating anchors.</li>
+      <li><strong>Technical gap.</strong> Craft skill (ceramics/jewelry) doesn't transfer to swimwear/knit/footwear construction. Mitigation: hire/partner before those categories.</li>
+      <li class="v"><strong>Coast-to-mountain coordination</strong> &amp; <strong>fungible roles without accountability.</strong> Mitigation: centralized fulfillment, decision rhythms, and an explicit decision-ownership map.</li>
+      <li class="a"><strong>Founder alignment &amp; luxury-vs-craft consistency.</strong> Mitigation: partnership work first (and a post-mortem on the prior jewelry venture); define quality standards per line.</li>
+      <li class="c"><strong>Brand/IP.</strong> Trademark and the “Division 1”/NCAA question cleared before public spend.</li>
+    </ul>
+  </section>
+
+  <!-- 12 decisions -->
+  <section class="reveal alt" style="padding-left:0;padding-right:0" id="decisions">
+   <div class="wrap">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--cobalt)" stroke="var(--came)" stroke-width="1.6"/></svg>Key open decisions</p>
+    <h2><span class="no">12</span>Resolve before building</h2>
+    <ul>
+      <li><strong>Make-by-hand or design-for-manufacture</strong> — per category. Governs capital, margins, scale.</li>
+      <li class="v"><strong>Lifestyle livelihood or scalable, sellable brand</strong> — shapes entity, funding, ambition.</li>
+      <li class="c"><strong>Which category is truly first</strong> — the plan recommends jewelry + knit hats; the founders decide.</li>
+      <li class="g"><strong>Equity split, vesting, buy-sell</strong> — including name rights on a founder's departure (the brand is named for them both).</li>
+      <li><strong>Entity type and home state</strong> — live now that the founders sit in two states (FL / OR / Delaware); needs counsel.</li>
+      <li class="a"><strong>Capital — how much, from where</strong>, and <strong>advisory structure</strong> — roles, equity/comp, and balancing the family-heavy bench.</li>
+    </ul>
+   </div>
+  </section>
+
+</main>
+
+<div class="camestrip" aria-hidden="true"></div>
+<footer>
+  <p class="mark">AAD1 · AddOne</p>
+  <p class="said">Alma · Audrey · Division 1</p>
+  <p>Prepared as a working draft for Alma Nye and Audrey Gingras. Figures are illustrative. Not legal or financial advice — consult a startup attorney, a trademark attorney, and an accountant before forming the entity or committing capital.</p>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>

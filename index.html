@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AddOne (AAD1) — Sample Business Plan</title>
+<meta name="description" content="AddOne (AAD1) — a sample, illustrative business-plan presentation. Not legal or financial advice.">
+<style>
+  :root {
+    --bg: #0a0b10;
+    --bg-soft: #11131c;
+    --panel: #15182400;
+    --ink: #e8e6df;
+    --ink-soft: #b9b6ac;
+    --line: #232737;
+    --cobalt: #3b6ed6;
+    --teal: #2fae9b;
+    --copper: #c9783b;
+    --amber: #e0a83e;
+    --garnet: #b3445a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 12% -8%, rgba(59,110,214,0.14), transparent 60%),
+      radial-gradient(1000px 560px at 92% 4%, rgba(47,174,155,0.12), transparent 60%),
+      radial-gradient(900px 700px at 50% 120%, rgba(179,68,90,0.12), transparent 60%),
+      var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    word-wrap: break-word;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 20px 72px; }
+
+  header.hero {
+    text-align: center;
+    padding: 40px 0 8px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
+  }
+  .monogram {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    font-size: clamp(2.6rem, 12vw, 4.2rem);
+    line-height: 1;
+    margin: 0 0 6px;
+    background: linear-gradient(135deg, var(--cobalt), var(--teal) 38%, var(--amber) 66%, var(--garnet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  }
+  .hero .brand { font-size: 0.92rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink-soft); margin: 0; }
+
+  .notice {
+    margin: 22px 0 6px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: 8px;
+    background: rgba(224,168,62,0.06);
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+  .notice strong { color: var(--amber); }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0.2em 0 0.3em;
+    color: #fff;
+  }
+  /* The document's leading H1 is shown in the hero; hide the in-body duplicate. */
+  .wrap > h1:first-of-type { display: none; }
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+    line-height: 1.2;
+    margin: 1.6em 0 0.5em;
+    padding-bottom: 0.28em;
+    border-bottom: 1px solid var(--line);
+    color: #f3f1ea;
+  }
+  h2::before {
+    content: "";
+    display: inline-block;
+    width: 0.62em; height: 0.62em;
+    margin-right: 0.5em;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    vertical-align: middle;
+    background: var(--cobalt);
+  }
+  h2:nth-of-type(5n+1)::before { background: var(--cobalt); }
+  h2:nth-of-type(5n+2)::before { background: var(--teal); }
+  h2:nth-of-type(5n+3)::before { background: var(--copper); }
+  h2:nth-of-type(5n+4)::before { background: var(--amber); }
+  h2:nth-of-type(5n+5)::before { background: var(--garnet); }
+
+  h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 1.18rem;
+    margin: 1.4em 0 0.4em;
+    color: var(--teal);
+  }
+
+  p { margin: 0.7em 0; color: var(--ink); }
+  strong { color: #fff; font-weight: 650; }
+  em { color: var(--ink-soft); }
+
+  a { color: var(--teal); }
+
+  ul, ol { margin: 0.7em 0; padding-left: 1.3em; }
+  li { margin: 0.5em 0; }
+  ul li::marker { color: var(--copper); }
+  ol li::marker { color: var(--cobalt); font-weight: 700; }
+
+  blockquote {
+    margin: 1.1em 0;
+    padding: 2px 16px;
+    border-left: 3px solid var(--garnet);
+    background: rgba(179,68,90,0.07);
+    border-radius: 0 8px 8px 0;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  hr.divider {
+    border: 0;
+    height: 1px;
+    margin: 2em 0;
+    background: linear-gradient(90deg, transparent, var(--line) 18%, var(--line) 82%, transparent);
+  }
+
+  footer.foot {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  @media (max-width: 420px) {
+    body { font-size: 16px; }
+    .wrap { padding: 20px 16px 56px; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="monogram">AAD1</p>
+      <p class="brand">AddOne &middot; Sample Business Plan</p>
+    </header>
+    <div class="notice">
+      <strong>Sample &amp; illustrative.</strong> This is a working draft for discussion.
+      Figures are placeholders, not projections. This is <strong>not legal or financial advice</strong> &mdash;
+      consult a startup attorney, a trademark attorney, and an accountant before forming an entity or committing capital.
+    </div>
+<h1>AddOne (AAD1) — Sample Business Plan</h1>
+<p><em>An active-lifestyle and accessories house founded by two NCAA Division I athletes and makers, Alma Nye and Audrey Gingras.</em></p>
+<hr class="divider">
+<h3>How to read this document</h3>
+<p>This is a <strong>sample / working draft</strong>, built from what's known about Alma and Audrey's interests, skills, and history. It is meant to be marked up, argued with, and filled in — not adopted as-is. Two things are deliberate:</p>
+<ol><li><strong>The financials are illustrative placeholders, not projections.</strong> They show the <em>shape</em> of the economics so the founders can replace them with real numbers. This document is not financial or legal advice; entity formation, trademark, and capital decisions should involve a startup attorney and an accountant.</li><li><strong>The eight product categories are sequenced, not simultaneous.</strong> A two-person company cannot responsibly launch swimwear, jewelry, travel bags, purses, wallets, sweaters, knit hats, and flip flops at once — each has different manufacturing, suppliers, margins, and inventory risk. The plan treats all eight as the brand's <em>product universe</em> and stages them across three phases. This sequencing is the single most important strategic choice in the plan.</li></ol>
+<hr class="divider">
+<h2>1. Executive summary</h2>
+<p>AddOne (stylized <strong>AAD1</strong>, pronounced "AddOne," from <strong>A</strong>lma <strong>A</strong>udrey <strong>D</strong>ivision <strong>1</strong>) is a direct-to-consumer active-lifestyle brand for design-literate women who move between water, mountains, and travel. The brand is founded by two former Division I athletes who are also working makers — Audrey in glass, ceramics, and design, Alma in ceramics and raku — and who have already collaborated on two product lines (jewelry and ceramics).</p>
+<p>The product universe spans the founders' own active life: <strong>swimwear and flip flops</strong> (water), <strong>sweaters and knit hats</strong> (mountain/cold), <strong>travel bags, purses, and wallets</strong> (carry/travel), and <strong>jewelry</strong> (adornment). The unifying idea is a single wardrobe-and-accessories brand for one customer's whole active life, carried by an authentic two-founder story and a craft sensibility.</p>
+<p>The company launches lean with the founders' proven, low-capital, high-margin categories, establishes brand and cash flow, then extends into the more capital-intensive hero and lifestyle categories as audience and capital allow. The defensible edge is not any single product — it is the combination of athletic credibility, genuine making ability, apparel commercial experience, and a brand story competitors cannot copy.</p>
+<hr class="divider">
+<h2>2. Company and vision</h2>
+<p><strong>Mission.</strong> To make beautifully crafted, performance-minded gear and adornment for women who live actively — in the water, on the trail, and on the move.</p>
+<p><strong>Brand thesis.</strong> Most active-women's brands are either technical (performance, no soul) or pretty (design, no credibility). AddOne sits in the rare middle: made by athletes who are also artists. Every category answers one question — <em>what does this customer wear, carry, and adorn herself with across an active, outdoor, travel-rich life?</em></p>
+<p><strong>The unifying thread across all eight categories</strong> is lifestyle, not material. It is the same woman from dawn swim to summit to airport: she needs a suit, sandals, a layer, a hat, a bag, a wallet, and something to wear that means something. That coherence is what lets one brand credibly span categories that would otherwise look scattered.</p>
+<p><strong>Legal status.</strong> To be formed (see §11). Entity type, home state (California vs. Oregon), and ownership structure are open decisions requiring counsel.</p>
+<hr class="divider">
+<h2>3. Founders and team</h2>
+<p><strong>Audrey Gingras — Co-founder.</strong> Visual artist (USD, 2025; Juror's Prize; artist residency) with hands-on command of glass, ceramics, and fabrication, and a former D1 swimmer. Has worked in business development at Lands' End Outfitters, giving her direct apparel-industry and commercial exposure. Based in West Palm Beach, Florida. Her swimming and the coastal Florida base are lived product insight for the water/swimwear categories.</p>
+<p><strong>Alma Nye — Co-founder.</strong> B.S. in Business Administration (University of Oregon), D1 lacrosse, current Latvian National Team player and lacrosse coach. Co-founded and operates a coffee business; premium-retail sales experience (On). Accomplished ceramicist with demonstrated raku skill. Certified diver; soloed Mt. Hood. Based in Joseph, Oregon. Her athletics, diving, and mountaineering <em>are</em> the brand's lifestyle, not decoration.</p>
+<p><strong>Roots.</strong> Both founders were born and raised in Portland, Oregon — a shared home base that connects them to a deep Pacific Northwest network of makers and family, several of whom form a natural advisory team (below).</p>
+<p><strong>Roles — shared and fungible, not fixed.</strong> Both founders are creatives; both can design and make. Rather than locking one into "creative" and the other into "business," the partnership shares creative direction and rotates or splits the operating responsibilities by strength and interest. What this requires in practice is not a rigid title split but a clear <strong>map of decision ownership</strong> — for any given decision (a product design, a price, a supplier choice, a spend), who has the final say? Fungible titles work only when decision rights are explicit; otherwise "we both do everything" becomes "no one owns anything." The recommended structure: shared creative leadership, with each founder designated the <strong>decision owner</strong> for specific operating domains (e.g., one owns finance/supply chain, the other owns brand/marketing/sales) so accountability is unambiguous even though creative work is joint. Revisit the split as the company grows.</p>
+<h3>Advisory team</h3>
+<p>A founding strength of AddOne is an unusually deep and <em>commercially relevant</em> bench of family advisors — a multi-generational creative lineage rooted in the founders' Portland home, anchored by the Nye family. This is a genuine, hard-to-replicate asset: not just mentorship and craft knowledge, but a directly analogous business case and decades of working-artist credibility.</p>
+<ul><li><strong>Danielle Easley Nye — Advisor (founder, dani Naturals).</strong> Alma's aunt; based in Bend, Oregon. Founder of <strong>dani Naturals</strong>, an all-natural bath, body, and home-care company she launched in Portland in 1996 — eco-friendly vegetable-based soaps and soy candles, a Redbook "Most Valuable Product" award, and a brand that grew into a recognized boutique presence in natural beauty and wellness. <em>This is the single most valuable advisor on the bench.</em> She has done the exact thing the founders are attempting: built a product brand from scratch in Oregon, navigated manufacturing, packaging, distribution, retail, and longevity (nearly 30 years), in an adjacent premium/natural-goods category. She should be treated as a primary mentor, not a peripheral advisor — and she is the one person who can speak to the unglamorous operational realities (sourcing, margins, inventory, wholesale) from lived experience.</li><li><strong>Whitney Nye — Advisor (artist).</strong> Alma's aunt; acclaimed contemporary mixed-media artist (BA, University of Oregon, 1989) working between studios in Portland and New York. Works held in public and private collections including the Jordan Schnitzer Museum of Art, OHSU, Vanderbilt and Swedish medical centers, and the U.S. Art in Embassies program; large-scale public commissions including Portland International Airport and the Nike World Campus. Brings serious aesthetic counsel, a sophisticated exhibition/collector network, and — via the Nike and PDX work — real experience operating as an artist at commercial and institutional scale.</li><li><strong>Juanita Nye — Advisor (artist).</strong> Alma's grandmother; Whitney's mother; Portland-based fine artist (studied under sculptor Mel Katz) and celebrated container gardener. The origin of the family's three-generation making tradition and its through-line of creative resourcefulness. Elder creative voice and the authentic root of the heritage-of-craft story.</li><li><strong>Audrey's advisors — to be added.</strong> Audrey may bring her own advisors aboard. This is worth doing deliberately. The current bench is exceptional but entirely from Alma's (the Nye) family — which is both a strength and a structural imbalance: advisors tied to one founder can, in a disagreement, read as that founder's bloc rather than the company's counsel. Balancing the bench protects the partnership. With dani Naturals already covering the "built a product brand" experience, Audrey's additions are best aimed at gaps the family network still doesn't fill — apparel/swimwear manufacturing specifically, DTC growth/performance marketing, and an independent advisor unaffiliated with either family.</li></ul>
+<p><strong>How to use the advisory team well (recommended).</strong> Keep advisor relationships clear and lightweight: define what each advisor is asked for (Danielle = end-to-end product-business operations; Whitney = art-world brand/aesthetic/network; Juanita = creative heritage and counsel), set a simple cadence (e.g., quarterly check-ins, or ad hoc by domain), and decide early whether any role carries equity or compensation — even close family advisors are best handled with a short, explicit understanding so expectations never blur. Advice is input, not authority; the founders remain the decision-makers per the ownership map above.</p>
+<p><strong>Near-term external needs (beyond the advisory bench).</strong></p>
+<ul><li>Technical swimwear/apparel designer or pattern maker (swimwear and knitwear require skills neither founder nor the current advisors have).</li><li>Manufacturing partners per category (swimwear, leather goods, footwear, knitwear).</li><li>Bookkeeper/accountant and a startup + trademark attorney.</li></ul>
+<hr class="divider">
+<h2>4. Market and customer</h2>
+<p><strong>Target customer.</strong> Active, outdoorsy, design-conscious women, roughly 25–45, who swim/hike/travel, have discretionary income, and prefer fewer, better, meaningful things over fast fashion. She is, essentially, an older version of the founders and their peers — which is a strength: they can design for someone they understand.</p>
+<p><strong>Positioning.</strong> Premium but not untouchable; performance-credible; craft-led; story-rich. Between mass athletic brands (scale, no soul) and pure fashion (no athletic credibility).</p>
+<p><strong>Why now.</strong> Sustained consumer pull toward founder-led, authentic, small-batch brands with a real story; growth in women's performance and outdoor categories; DTC tools that let two people reach a national audience without retail.</p>
+<p><strong>Competitive reality (honest).</strong> Every one of these eight categories is crowded and many are dominated by well-capitalized incumbents. AddOne does not win on product specs or price. It wins on <em>brand, story, and taste</em> — which is exactly why brand and sequencing matter more than breadth.</p>
+<hr class="divider">
+<h2>5. Products — the universe and the rollout</h2>
+<p>The eight categories are grouped by what they demand operationally, then staged so the brand learns and earns before taking on capital-intensive products.</p>
+<h3>Phase 1 — Anchor (Months 0–12): prove the brand, generate cash, low capital</h3>
+<p>Categories the founders can make or source at low minimums, with high margins and fast time-to-market.</p>
+<ul><li><strong>Jewelry</strong> — already made and sold by the founders together; founder-made or small-batch; high margin; lowest risk; establishes the aesthetic.</li><li><strong>Knit hats</strong> (beanies/headwear) — low minimum-order quantities, simple supply chain, strong brand-logo vehicle, on-brand for outdoor/cold.</li><li><em>(Optional)</em> <strong>Wallets / small leather goods</strong> — small, high-margin carry items that introduce the leather category cheaply.</li></ul>
+<p>Purpose of Phase 1: validate demand, build the email list and social audience, generate revenue, and establish brand identity — <strong>before</strong> spending on technical product.</p>
+<h3>Phase 2 — Hero (Months 12–24): the brand-defining product</h3>
+<ul><li><strong>Swimwear</strong> — the boldest expression of the brand's water/athletic story and Audrey's lived insight. Deliberately <em>not</em> first, because it requires a technical designer, performance textiles, fit/grading, and meaningful inventory capital. Launched once brand, audience, and cash exist to support it. This is the product the brand is <em>about</em>; it just isn't the product the brand <em>starts</em> with.</li><li><strong>Flip flops / sandals</strong> — natural water-lifestyle companion to swimwear; can launch alongside or just after, via a footwear manufacturer.</li></ul>
+<h3>Phase 3 — Lifestyle expansion (Months 24–36+): round out the wardrobe</h3>
+<p>Leveraging established brand, audience, and supplier relationships.</p>
+<ul><li><strong>Travel bags</strong> and <strong>purses</strong> — leather/textile carry; higher complexity and capital.</li><li><strong>Sweaters</strong> — knitwear; seasonal; requires knit manufacturing partner.</li></ul>
+<h3>The make-by-hand vs. manufacture split (decisive)</h3>
+<ul><li><strong>Founder-made / small-batch:</strong> jewelry, possibly ceramics-adjacent pieces. Unique, high-margin, scarcity built in, but hard to scale.</li><li><strong>Manufactured by partners:</strong> swimwear, flip flops, bags, purses, wallets, sweaters, knit hats. Scalable, but capital-intensive and dependent on sourcing relationships and minimum orders.</li></ul>
+<p>This split is not a detail — it determines capital needs, margins, and how much of the brand the founders physically touch. It should be decided explicitly per category.</p>
+<hr class="divider">
+<h2>6. Brand and identity</h2>
+<ul><li><strong>Name system:</strong> <em>AddOne</em> (spoken and written brand) / <strong>AAD1</strong> (compressed monogram/mark, à la LV or the prancing horse) / <em>AlmaAudreyDivision1</em> (the meaning/origin story). Lead with "AddOne" in all customer-facing use; deploy AAD1 as the visual mark.</li><li><strong>Story:</strong> two Division I athletes and makers building gear for a life like theirs — and, beneath that, a documented Portland-rooted creative lineage: three generations of Nye women working as artists and makers, including a successful natural-goods brand founder (dani Naturals, est. 1996) in the family. Authentic, ownable, and the brand's primary moat. The heritage-of-craft thread is real and verifiable, not invented, and can be drawn on honestly — including a credible "next generation of a making family" narrative.</li><li><strong>Visual direction:</strong> craft sensibility (hand-made feel, tactile detail) meets clean athletic modernity. Optional heritage <em>texture</em> — palette and a single abstracted motif drawn from the founders' family-name heraldry (Gingras blue/silver fleur-de-lis; Nye red/silver stripes) — used as inspiration only, abstracted and original, never as literal crests.</li><li><strong>Critical pre-launch legal step:</strong> trademark clearance on <em>AddOne</em>, <em>AAD1</em>, and <em>AlmaAudreyDivision1</em>, including assessment of NCAA sensitivity around "Division 1," and securing both spellings across domains and social handles (the AddOne/AAD1 spelling-to-sound gap must be managed deliberately). Do this before any public branding spend.</li></ul>
+<hr class="divider">
+<h2>7. Business model and pricing</h2>
+<ul><li><strong>Channel:</strong> direct-to-consumer first (own the margin and the customer relationship), via Shopify + an Instagram-led content engine. Selective wholesale to aligned retailers only after the brand is established.</li><li><strong>Inventory strategy:</strong> made-to-order and limited drops early to minimize inventory risk; deliberate small-batch scarcity (the Ferrari principle — slightly under-supply demand to protect desirability and pricing power). This converts the founders' biggest constraint (can't mass-produce) into the actual strategy.</li><li><strong>Pricing posture:</strong> premium and disciplined. <strong>Never train customers to wait for discounts</strong> (the LVMH principle). Protect price; build perceived value through craft, story, and scarcity.</li><li><strong>Revenue streams:</strong> product sales (primary); limited collaborations/capsules; potential made-to-order/bespoke jewelry; later, wholesale.</li></ul>
+<hr class="divider">
+<h2>8. Operations and supply chain</h2>
+<ul><li><strong>Design hubs:</strong> West Palm Beach, Florida (Audrey) and Joseph, Oregon (Alma) — a coast-and-mountain footprint that literally embodies the brand's water-to-trail range, but also a real operating spread (opposite corners of the country, a 3-hour time difference, and Joseph being rural/remote). Decide explicitly how design, inventory, fulfillment, and decision-making are split across the two. Centralize fulfillment in one hub or use a third-party logistics (3PL) provider early; do not try to run inventory out of two homes 2,500 miles apart.</li><li><strong>Geography as brand asset:</strong> the split is worth leaning into — Audrey on the Atlantic coast (swimwear, water, warm-weather lifestyle) and Alma in the Wallowa mountains (knitwear, outdoor, cold-weather, craft). Each founder can authentically anchor and shoot the categories native to her environment. The brand's two-climate story is real, not manufactured.</li><li><strong>Sourcing:</strong> build vetted manufacturer relationships per category, starting with the lowest-MOQ partners (knitwear, jewelry components) and adding swimwear and leather as phases open. Audrey's Lands' End apparel-sourcing exposure is a real asset here.</li><li><strong>Quality:</strong> define the standard early. Note the tension between craft irregularity (beautiful, but variable) and premium consistency (demands repeatability). Resolve per product line.</li><li><strong>Systems:</strong> clean books from day one, separate business banking, documented capital contributions, inventory and order-management software, business insurance and licenses.</li></ul>
+<hr class="divider">
+<h2>9. Go-to-market</h2>
+<ul><li><strong>Pre-launch:</strong> build audience before product — founders' story, behind-the-scenes making, the athlete-maker narrative; collect emails; seed an engaged community.</li><li><strong>Launch:</strong> Phase 1 anchor products via limited first drop; founder-led storytelling; press/influencer outreach to aligned outdoor/active and craft communities.</li><li><strong>Growth engine:</strong> consistent content, drops that create anticipation, customer community, and selective collaborations. Word-of-mouth is the primary growth lever for a small premium brand — which makes the sayable "AddOne" name and a strong story essential.</li></ul>
+<hr class="divider">
+<h2>10. Financial framework <em>(illustrative — replace with real figures)</em></h2>
+<blockquote><p>These numbers are placeholders to show structure and to be replaced with the founders' actual costs and capital. They are not projections or advice.</p></blockquote>
+<p><strong>Illustrative startup costs (Phase 1):</strong></p>
+<ul><li>Entity formation, trademark, legal: $3,000–8,000</li><li>Brand identity, website, photography: $5,000–15,000</li><li>Initial inventory / materials (jewelry + hats): $5,000–15,000</li><li>Software, packaging, insurance, misc.: $2,000–5,000</li><li><strong>Rough Phase 1 starting capital: ~$15,000–40,000</strong></li></ul>
+<p><strong>Illustrative unit economics — jewelry (founder-made):</strong></p>
+<ul><li>Sale price $120 · materials $25 · labor/overhead allocation $20 → contribution ~$75/unit. High margin; scales with founder time.</li></ul>
+<p><strong>Illustrative unit economics — swimwear (manufactured, Phase 2):</strong></p>
+<ul><li>Sale price $110 · landed cost $35 · returns/fulfillment allowance $15 → contribution ~$60/unit. Lower margin %, higher upfront inventory and development cost, larger minimum orders.</li></ul>
+<p><strong>Illustrative 3-year shape (not a forecast):</strong></p>
+<ul><li>Year 1 (anchor only): modest revenue, near break-even, goal = validate + build audience.</li><li>Year 2 (swimwear hero launch): step-up in revenue and in capital required; first real inventory risk.</li><li>Year 3 (lifestyle expansion): broader catalog, established brand, supplier leverage.</li></ul>
+<p><strong>Capital question to answer before launch:</strong> how much can each founder contribute or raise, how long can each go without income, and do their risk appetites match? Phase 1 is designed to be fundable from modest personal capital; Phases 2–3 likely require retained earnings or outside funding.</p>
+<hr class="divider">
+<h2>11. Milestones / roadmap</h2>
+<ul><li><strong>0–3 months:</strong> founder alignment + ownership terms; map decision ownership by domain; choose entity and home state (Florida / Oregon / Delaware question); trademark filing; brand identity; supplier outreach for anchor products.</li><li><strong>3–6 months:</strong> Phase 1 product development; website; pre-launch audience building.</li><li><strong>6–12 months:</strong> Phase 1 launch (jewelry + knit hats); first drops; learn unit economics; grow list.</li><li><strong>12–18 months:</strong> hire/partner for technical swimwear design; develop swimwear; secure manufacturer.</li><li><strong>18–24 months:</strong> swimwear (hero) + flip flops launch.</li><li><strong>24–36 months:</strong> lifestyle expansion (bags, purses, wallets, sweaters); evaluate selective wholesale.</li></ul>
+<hr class="divider">
+<h2>12. Risk analysis</h2>
+<ul><li><strong>Over-extension (the central risk).</strong> Eight categories is the diffusion trap. Mitigation: the phased rollout and a strict rule that no new category opens until the prior phase is stable.</li><li><strong>Capital intensity.</strong> Swimwear, leather goods, and footwear demand inventory and development cash. Mitigation: sequence them after cash-generating anchors.</li><li><strong>Technical capability gap.</strong> Founders' craft (ceramics/jewelry) doesn't transfer to swimwear/knitwear/footwear construction. Mitigation: hire/partner before launching those categories.</li><li><strong>Coast-to-mountain coordination.</strong> Opposite corners of the country (Florida and rural Oregon), a 3-hour time difference, and Joseph's remoteness raise the cost of logistics and decision-making. Mitigation: centralized fulfillment or a 3PL, scheduled decision rhythms, and a clear operating agreement on roles and logistics.</li><li><strong>Shared/fungible roles without accountability.</strong> "We both do everything" can become "no one owns anything." Mitigation: explicit decision-ownership map by domain even while creative work stays joint.</li><li><strong>Founder alignment.</strong> Friends in business fail on unspoken expectations. Mitigation: do the partnership/ownership work first (see the founders' questions); run a post-mortem on the prior jewelry collaboration.</li><li><strong>Luxury consistency vs. craft irregularity.</strong> Mitigation: define quality standards per line; decide where "controlled imperfection" is a feature vs. a flaw.</li><li><strong>Brand/IP.</strong> Trademark and the "Division 1"/NCAA question must be cleared before public spend.</li></ul>
+<hr class="divider">
+<h2>13. Key open decisions (resolve before building)</h2>
+<ol><li><strong>Make-by-hand or design-for-manufacture</strong> — per category. Governs capital, margins, and scale.</li><li><strong>Lifestyle livelihood or scalable, sellable brand</strong> — shapes entity, funding, and ambition.</li><li><strong>Which category is truly first</strong> — the plan recommends jewelry + knit hats; the founders decide.</li><li><strong>Equity split, vesting, and buy-sell terms</strong> — including name rights on a founder's departure (the brand is named for them both).</li><li><strong>Entity type and home state</strong> — now a live question, since the founders sit in two different states (Florida and Oregon). Where the entity registers, where it's taxed, and where each founder's activity creates nexus all need counsel. Many remote two-founder companies form in one founder's state or in Delaware and register to do business where needed.</li><li><strong>How much capital, and from where.</strong></li><li><strong>Advisory structure</strong> — who advises, in what role, whether any role carries equity or compensation, and how to balance a currently family-heavy bench with at least one independent commercial/industry advisor and advisors of Audrey's choosing.</li></ol>
+<hr class="divider">
+<h2>Appendix — brand identity notes</h2>
+<ul><li><strong>Naming:</strong> AddOne (spoken/written) · AAD1 (mark) · AlmaAudreyDivision1 (meaning).</li><li><strong>Palette/motif seeds (inspiration only, to be abstracted):</strong> Gingras — blue &amp; silver, fleur-de-lis; Nye — red, silver &amp; charcoal, horizontal stripe. Extract and modernize; do not reproduce the vendor crests or claim them as heritage arms.</li><li><strong>Tone:</strong> athlete-maker authenticity; craft warmth; modern restraint.</li></ul>
+<hr class="divider">
+<p><em>Prepared as a working draft for Alma Nye and Audrey Gingras. Figures are illustrative. Not legal or financial advice; consult a startup attorney, a trademark attorney, and an accountant before forming the entity or committing capital.</em></p>
+    <footer class="foot">
+      AddOne (AAD1) &mdash; sample, illustrative business-plan presentation. Not legal or financial advice.
+    </footer>
+  </div>
+</body>
+</html>

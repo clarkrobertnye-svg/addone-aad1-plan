@@ -1,0 +1,20 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Logs / env / secrets — never commit
+*.log
+.env
+.env.*
+*.pem
+*.key
+
+# Static-site build output (none currently; reserved)
+/_site/
+/dist/
+/.cache/
+node_modules/

@@ -216,6 +216,23 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
   .window,.hero .glow{animation:none}
   html{scroll-behavior:auto}
 }
+/* marks & materials section */
+.mk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin:1em 0 1.8em}
+.mk-tile{text-align:center}
+.mk-box{height:120px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid var(--line)}
+.mk-box.dark{background:#14161a;border-color:#2a2e34}
+.mk-box.clay{background:#c9b189;border-color:#b39a6f}
+.mk-cap{font-size:.72rem;color:var(--muted);margin-top:7px;letter-spacing:.03em}
+.mk-pal{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:12px;margin:1em 0 1.8em}
+.mk-sw{height:70px;border-radius:8px;display:flex;align-items:flex-end;padding:8px;border:1px solid rgba(0,0,0,.08);position:relative}
+.mk-sw span{font-size:.64rem;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.mk-sw.lt span{color:#20232a;text-shadow:none}
+.mk-sw .new{position:absolute;top:6px;right:6px;font-size:.52rem;letter-spacing:.08em;background:#14161a;color:#ece7dd;padding:2px 6px;border-radius:20px}
+.mk-fabgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(126px,1fr));gap:14px;margin-top:1em}
+.mk-fabtile{text-align:left}
+.mk-fabsw{width:100%;height:76px;display:block;border-radius:10px;border:1px solid var(--line)}
+.mk-fabcap{font-size:.78rem;font-weight:600;color:var(--came);margin-top:7px;line-height:1.25}
+.mk-fabuse{font-size:.68rem;color:var(--copper);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
 </style>
 
 <!-- shared SVG defs: crackle texture filter + glass gradients -->
@@ -338,6 +355,7 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
     <a href="#market"><span class="jewel"></span>Market</a>
     <a href="#products"><span class="jewel"></span>Products</a>
     <a href="#brand"><span class="jewel"></span>Brand</a>
+    <a href="#marks"><span class="jewel"></span>Marks &amp; materials</a>
     <a href="#model"><span class="jewel"></span>Model</a>
     <a href="#ops"><span class="jewel"></span>Operations</a>
     <a href="#finance"><span class="jewel"></span>Financials</a>
@@ -497,10 +515,69 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
    </div>
   </section>
 
-  <!-- 7 model -->
+  <!-- marks & materials defs -->
+  <svg style="position:absolute;width:0;height:0" aria-hidden="true"><defs>
+    <pattern id="fknit" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 0 V6 M3 0 V6" stroke="rgba(0,0,0,.10)" stroke-width="1"/><path d="M0 3 H6" stroke="rgba(255,255,255,.07)" stroke-width="1"/></pattern>
+    <pattern id="fweave" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 0 H6 M0 3 H6" stroke="rgba(0,0,0,.10)" stroke-width="1"/><path d="M0 0 V6 M3 0 V6" stroke="rgba(0,0,0,.07)" stroke-width="1"/></pattern>
+    <filter id="fbrushed"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .22 0"/></filter>
+    <filter id="fheather"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .16 0"/></filter>
+    <linearGradient id="fsheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".42" stop-color="#fff" stop-opacity=".26"/><stop offset=".55" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <symbol id="s3c" viewBox="0 0 100 100"><rect x="27" y="34" width="10" height="32" rx="2" fill="#d6a13c"/><rect x="16" y="45" width="32" height="10" rx="2" fill="#d6a13c"/><text x="58" y="68" font-family="Fraunces,Georgia,serif" font-weight="900" font-size="46" fill="#3f63c9">1</text></symbol>
+    <symbol id="s7c" viewBox="0 0 100 100"><circle cx="50" cy="48" r="42" fill="none" stroke="#b3623c" stroke-width="5"/><circle cx="50" cy="48" r="31" fill="none" stroke="#1c8a7c" stroke-width="5"/><circle cx="50" cy="48" r="21" fill="none" stroke="#d6a13c" stroke-width="5"/><circle cx="50" cy="48" r="11" fill="#1c8a7c"/><text x="50" y="54" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="900" font-size="17" fill="#f3efe6">A</text></symbol>
+    <symbol id="s8c" viewBox="0 0 100 100"><polygon points="42,20 30,28 30,41 42,33" fill="#3f63c9"/><rect x="42" y="20" width="18" height="22" fill="#3f63c9"/><rect x="42" y="42" width="18" height="22" fill="#1c8a7c"/><rect x="42" y="64" width="18" height="18" fill="#b3623c"/><rect x="30" y="82" width="42" height="8" fill="#d6a13c"/><g stroke="#5f636a" stroke-width="2.5"><line x1="42" y1="42" x2="60" y2="42"/><line x1="42" y1="64" x2="60" y2="64"/><line x1="30" y1="82" x2="72" y2="82"/></g></symbol>
+    <symbol id="s9m" viewBox="0 0 100 100"><rect x="20" y="18" width="60" height="60" rx="9" fill="none" stroke="currentColor" stroke-width="3"/><rect x="26" y="24" width="48" height="48" rx="6" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/><text x="50" y="55" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="900" font-size="18" fill="currentColor">AAD1</text></symbol>
+  </defs></svg>
+
+  <!-- 7 marks & materials -->
+  <section class="reveal" id="marks">
+    <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--copper)" stroke="var(--came)" stroke-width="1.6"/></svg>Identity · marks &amp; materials</p>
+    <h2><span class="no">07</span>The marks &amp; the materials</h2>
+    <p>Beneath the name sits a working identity kit: four marks that each do a different job, an eleven-color palette of glass, glaze, and ground, and a fabric library that pairs the right material to the right line. Each is drawn from the founders' own craft — leaded glass and raku — so the brand looks made, not designed.</p>
+
+    <h3>Four marks, one family</h3>
+    <div class="mk-grid">
+      <div class="mk-tile"><div class="mk-box dark"><svg viewBox="0 0 100 100" width="78" height="78"><use href="#s3c" width="100" height="100"/></svg></div><div class="mk-cap">+1 — digital &amp; app icon</div></div>
+      <div class="mk-tile"><div class="mk-box dark"><svg viewBox="0 0 100 100" width="78" height="78"><use href="#s7c" width="100" height="100"/></svg></div><div class="mk-cap">Fired rings — craft &amp; ceramics</div></div>
+      <div class="mk-tile"><div class="mk-box dark"><svg viewBox="0 0 100 100" width="78" height="78"><use href="#s8c" width="100" height="100"/></svg></div><div class="mk-cap">Tiled One — hero &amp; packaging</div></div>
+      <div class="mk-tile"><div class="mk-box clay"><svg viewBox="0 0 100 100" width="78" height="78" style="color:#5a4326"><use href="#s9m" width="100" height="100"/></svg></div><div class="mk-cap">Maker's stamp — physical chop</div></div>
+    </div>
+
+    <h3>Eleven colors — glass, glaze &amp; ground</h3>
+    <div class="mk-pal">
+      <div class="mk-sw" style="background:#3f63c9"><span>Cobalt</span></div>
+      <div class="mk-sw" style="background:#1c8a7c"><span>Verdigris</span></div>
+      <div class="mk-sw" style="background:#b3623c"><span>Copper</span></div>
+      <div class="mk-sw lt" style="background:#d6a13c"><span>Amber</span></div>
+      <div class="mk-sw" style="background:#a8434c"><span>Garnet</span></div>
+      <div class="mk-sw" style="background:#14161a"><span>Carbon</span></div>
+      <div class="mk-sw lt" style="background:#ece7dd"><span>Porcelain</span></div>
+      <div class="mk-sw lt" style="background:#aab1ba"><span>Pewter</span></div>
+      <div class="mk-sw lt" style="background:#c9b189"><span>Clay</span></div>
+      <div class="mk-sw lt" style="background:#93a48d"><span>Sage</span></div>
+      <div class="mk-sw lt" style="background:#c9a3a1"><span class="new">NEW</span><span>Blush</span></div>
+    </div>
+
+    <h3>Fabric × color — eleven materials, eleven ways</h3>
+    <p style="font-size:.95rem;color:var(--muted);max-width:66ch">One fabric, one color, the line it suits — the seed of a full material library. Modal and TENCEL are regenerated cellulosics (semi-synthetic), prized for softness; swim runs on nylon/elastane, with recycled ECONYL the on-brand pick.</p>
+    <div class="mk-fabgrid">
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#c9a3a1"/><rect width="100" height="76" fill="url(#fsheen)"/></svg><div class="mk-fabcap">Mulberry silk · Blush</div><div class="mk-fabuse">Sleepwear</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#ece7dd"/><rect width="100" height="76" fill="url(#fknit)"/></svg><div class="mk-fabcap">Supima cotton · Porcelain</div><div class="mk-fabuse">T-shirts</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#aab1ba"/><rect width="100" height="76" filter="url(#fheather)"/><rect width="100" height="76" fill="url(#fknit)"/></svg><div class="mk-fabcap">Ring-spun cotton · Pewter</div><div class="mk-fabuse">T-shirts</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#d6a13c"/><rect width="100" height="76" fill="url(#fweave)"/></svg><div class="mk-fabcap">Linen (flax) · Amber</div><div class="mk-fabuse">Resort / summer</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#a8434c"/><rect width="100" height="76" filter="url(#fheather)" opacity=".7"/><rect width="100" height="76" fill="url(#fknit)"/></svg><div class="mk-fabcap">Merino wool · Garnet</div><div class="mk-fabuse">Sweaters / base layer</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#3f63c9"/><rect width="100" height="76" fill="url(#fknit)"/></svg><div class="mk-fabcap">Modal (beech) · Cobalt</div><div class="mk-fabuse">T-shirts · accent</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#93a48d"/><rect width="100" height="76" fill="url(#fsheen)" opacity=".6"/><rect width="100" height="76" fill="url(#fknit)"/></svg><div class="mk-fabcap">TENCEL lyocell · Sage</div><div class="mk-fabuse">Sleepwear</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#c9b189"/><rect width="100" height="76" filter="url(#fbrushed)" opacity=".5"/></svg><div class="mk-fabcap">Brushed cotton · Clay</div><div class="mk-fabuse">Sleepwear · cozy</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#1c8a7c"/><rect width="100" height="76" fill="url(#fsheen)"/></svg><div class="mk-fabcap">Recycled nylon + elastane · Verdigris</div><div class="mk-fabuse">Swim · the pick</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#1f232a"/><rect width="100" height="76" fill="url(#fsheen)"/></svg><div class="mk-fabcap">Poly (PBT) + elastane · Carbon</div><div class="mk-fabuse">Swim · durability</div></div>
+      <div class="mk-fabtile"><svg class="mk-fabsw" viewBox="0 0 100 76" preserveAspectRatio="none" aria-hidden="true"><rect width="100" height="76" fill="#b3623c"/><rect width="100" height="76" fill="url(#fsheen)"/></svg><div class="mk-fabcap">Nylon + Lycra · Copper</div><div class="mk-fabuse">Swim · classic</div></div>
+    </div>
+  </section>
+
+  <!-- 8 model -->
   <section class="reveal" id="model">
     <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--garnet)" stroke="var(--came)" stroke-width="1.6"/></svg>Business model &amp; pricing</p>
-    <h2><span class="no">07</span>Scarcity by design</h2>
+    <h2><span class="no">08</span>Scarcity by design</h2>
     <ul>
       <li><strong>Channel:</strong> direct-to-consumer first (own the margin and the customer); selective wholesale only once established.</li>
       <li class="v"><strong>Inventory:</strong> made-to-order and limited drops early; deliberate small-batch scarcity (the Ferrari principle) turns the founders' biggest constraint into the strategy.</li>
@@ -513,7 +590,7 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
   <section class="reveal alt" style="padding-left:0;padding-right:0" id="ops">
    <div class="wrap">
     <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--verdigris)" stroke="var(--came)" stroke-width="1.6"/></svg>Operations &amp; supply chain</p>
-    <h2><span class="no">08</span>Coast to mountain</h2>
+    <h2><span class="no">09</span>Coast to mountain</h2>
     <p>West Palm Beach (Audrey) and Joseph, Oregon (Alma) is a coast-and-mountain footprint that literally embodies the water-to-trail range — and a real operating spread (opposite corners of the country, a 3-hour gap, rural Joseph). Lean into it as a brand asset: each founder authentically anchors the categories native to her climate. But <strong>do not run inventory out of two homes 2,500 miles apart</strong> — centralize fulfillment or use a 3PL early.</p>
     <p>Build vetted manufacturer relationships per category, lowest-MOQ first (knitwear, jewelry components), adding swimwear and leather as phases open. Define quality standards per line, resolving the tension between craft irregularity (beautiful, variable) and premium consistency. Clean books, separate banking, documented contributions from day one.</p>
    </div>
@@ -522,7 +599,7 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
   <!-- 9 finance -->
   <section class="reveal" id="finance">
     <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--amber)" stroke="var(--came)" stroke-width="1.6"/></svg>Financial framework</p>
-    <h2><span class="no">09</span>The shape of the economics</h2>
+    <h2><span class="no">10</span>The shape of the economics</h2>
     <p><em>Illustrative placeholders — replace with real figures. Not a forecast, and not financial advice.</em></p>
     <div class="cards">
       <div class="card v"><div class="lab">Phase 1 starting capital</div><div class="big">~$15k–40k</div><p>Entity, trademark, brand, site, and initial jewelry + hat inventory.</p></div>
@@ -536,7 +613,7 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
   <section class="reveal alt" style="padding-left:0;padding-right:0" id="road">
    <div class="wrap">
     <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--copper)" stroke="var(--came)" stroke-width="1.6"/></svg>Milestones</p>
-    <h2><span class="no">10</span>The roadmap</h2>
+    <h2><span class="no">11</span>The roadmap</h2>
     <ul class="road">
       <li><span class="when">0–3 months</span><span class="what">Founder alignment + ownership terms; map decision ownership; choose entity &amp; home state (FL / OR / Delaware); file trademarks; brand identity; supplier outreach for anchor products.</span></li>
       <li><span class="when">3–6 months</span><span class="what">Phase 1 product development; website; pre-launch audience building.</span></li>
@@ -551,7 +628,7 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
   <!-- 11 risk -->
   <section class="reveal" id="risk">
     <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--garnet)" stroke="var(--came)" stroke-width="1.6"/></svg>Risk analysis</p>
-    <h2><span class="no">11</span>Where it breaks</h2>
+    <h2><span class="no">12</span>Where it breaks</h2>
     <ul>
       <li class="g"><strong>Over-extension (the central risk).</strong> Eight categories is the diffusion trap. Mitigation: the phased rollout, and no new category until the prior phase is stable.</li>
       <li class="c"><strong>Capital intensity.</strong> Swimwear, leather, footwear need cash. Mitigation: sequence after cash-generating anchors.</li>
@@ -566,7 +643,7 @@ a:focus-visible,.contents a:focus-visible{outline:2px solid var(--amber);outline
   <section class="reveal alt" style="padding-left:0;padding-right:0" id="decisions">
    <div class="wrap">
     <p class="eyebrow"><svg class="lozenge" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" transform="rotate(45 8 8)" fill="var(--cobalt)" stroke="var(--came)" stroke-width="1.6"/></svg>Key open decisions</p>
-    <h2><span class="no">12</span>Resolve before building</h2>
+    <h2><span class="no">13</span>Resolve before building</h2>
     <ul>
       <li><strong>Make-by-hand or design-for-manufacture</strong> — per category. Governs capital, margins, scale.</li>
       <li class="v"><strong>Lifestyle livelihood or scalable, sellable brand</strong> — shapes entity, funding, ambition.</li>
